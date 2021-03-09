@@ -1,0 +1,12 @@
+.card{
+    height: 100%;
+    width: 100%;
+}
+
+.card label{
+    margin-top: 50%;
+}
+
+.see-all-card{
+    background-color: rgba(0, 128, 0, 0.151);
+}

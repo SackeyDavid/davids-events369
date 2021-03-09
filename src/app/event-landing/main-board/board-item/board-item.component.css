@@ -1,0 +1,41 @@
+.big-board-event .time-div{
+    opacity: 0.5;
+    font-size: 14px;
+}
+
+.big-board-event .title-div{
+    font-size: 25px;
+}
+
+.big-board-event .eventers-div{
+    border-left: solid;
+    border-color:white;
+    border-width: 1px;
+    padding-bottom: 15px;
+}
+
+.big-board-event img{
+    width: 40px;
+    height: 40px;
+}
+
+.small-board-event .time-div{
+    opacity: 0.5;
+    font-size: 11px;
+}
+
+.small-board-event .title-div{
+    font-size: 18px;
+}
+
+.small-board-event .eventers-div{
+    border-left: solid;
+    border-color:white;
+    border-width: 1px;
+    padding-bottom: 15px;
+}
+
+.small-board-event img{
+    width: 30px;
+    height: 30px;
+}

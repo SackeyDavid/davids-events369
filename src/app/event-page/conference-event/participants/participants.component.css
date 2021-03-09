@@ -1,0 +1,19 @@
+.persons-div{
+    background-color: rgb(235, 235, 235);
+    height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.participant-list i{
+    font-size: 20px;
+}
+
+.participant-list.active{
+    border: 1px solid rgba(128, 128, 128, 0.678);
+    border-radius: 10px;
+}
+
+b{
+    font-weight: 700;
+}

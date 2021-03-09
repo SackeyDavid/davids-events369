@@ -1,0 +1,264 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar  id="main">
+    <ion-buttons slot="start">
+        
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+
+      <!-- live stream  -->
+
+      <ion-col sizeSm="12" sizeLg="7">
+        <ion-list style="background: inherit;margin-top: -1vh;padding-bottom: 0;">
+          <ion-item style="--background: inherit; --border-style: none;margin-right: -1vh;">
+            <!-- <ion-icon slot="end" mode="ios" name="ellipsis-horizontal"></ion-icon> -->
+            <ion-label><b> Live Streaming </b>&nbsp; Now</ion-label>
+          </ion-item>
+        </ion-list>
+
+        <!-- <ion-thumbnail style="border: 2px solid #f7542e; border-radius: 17px;">
+          <img style="border: 3px solid var(--ion-background-color); border-radius: 15px;" src="https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fuser%20avatars%2F1596863197908.jpg?alt=media&token=a9ce07c3-b3d8-4cf1-898a-7d0740a7ecf5" />
+        </ion-thumbnail> -->
+        <ion-slides [options]="sliderConfig" *ngIf="users_online" style="background-color: transparent;">
+          
+          <ion-slide class="usersonline" style="width: 10vh;" *ngFor="let user of users_online | slice:0:8; let i=index"> 
+            <span *ngIf="user.isUser" style="position: absolute;bottom: 0;right: 0;"><ion-icon name="add" style="color: var(--ion-color-primary-contrast);padding: .3vh; background: var(--ion-color-brand-color);border-radius: 50%;position: relative; bottom: -.7vh;"></ion-icon> </span>
+              <ion-thumbnail style="border: 2px solid #f7542e; border-radius: 17px;">
+                <img style="border: 3px solid var(--ion-background-color); border-radius: 15px;" [src]="user.photo" />
+            </ion-thumbnail>
+            </ion-slide>
+  
+          </ion-slides>
+
+        
+      </ion-col>
+
+      
+      <!-- searchbar  -->
+
+      <ion-col sizeSm="12" sizeLg="5">
+        <ion-list style="background: inherit;margin-top: -2vh;">
+          <!-- <ion-item style="--background: inherit; --border-style: none;margin-right: -2vh;">
+            <ion-icon slot="end" name="ellipsis-horizontal"></ion-icon>
+            <ion-label><b> Advanced </b>&nbsp; Search</ion-label>
+          </ion-item> -->
+        
+          <ion-item style="--background: inherit; --border-style: none;margin-right: -2vh;">
+            <!-- <ion-icon slot="end" name="ellipsis-horizontal"></ion-icon> -->
+            <!-- <ion-button style="--background: #f7542e; --background-hover: #f7542e; --background-activated: #f7542e;margin-left: 0; font-size: 15px; height: 6.9vh; width: 20%;--border-radius: 15px; font-weight: 600;margin-bottom: -0.5vh;" slot="end" mode="ios" shape="round">Find</ion-button> -->
+            
+              <!-- <ion-menu-button></ion-menu-button> -->
+            
+            <ion-searchbar id="first-tab" mode="md" class="store" placeholder="Search event"></ion-searchbar>
+            <ion-avatar style="margin-top: 0vh;margin-bottom: 0;height: 7vh;width: 7vh;">
+              <img style="border: 2px solid var(--ion-color-step-100);" src="https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fuser%20avatars%2F1596863197908.jpg?alt=media&token=a9ce07c3-b3d8-4cf1-898a-7d0740a7ecf5" />
+             </ion-avatar>
+          </ion-item>
+        </ion-list>
+        
+        
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-list mode="md" style="background: inherit;padding-top: 1%;">
+          <ion-item style="--background: inherit;--border-style: none;">
+            <ion-label>
+              <h2 style="font-weight: 600;">Experience events</h2>
+              <h3 style="font-weight: 200;">Connect online as if you were there</h3>
+            </ion-label>
+          </ion-item>
+          <span></span>
+        </ion-list>
+        <ion-slides class="popular" style="padding-left: 1% !important;" [options]="sliderConfig">
+          <!-- box-shadow: 0 4px 16px rgba(8, 197, 18, 0.12); -->
+            <ion-slide  style="min-width: max-content !important;" *ngFor="let product of banners"> 
+              <!-- <ion-icon name="heart-outline" style="color: #000;border: 1px solid #c1c1c1;color: #717171; position: absolute;bottom: 5vh;right: 5vh;background: #fff;border-radius: 50%;padding: 1vh;cursor: pointer;z-index: 99;"></ion-icon> -->
+        <a routerLink='/event-landing'>
+          <div style="min-height: 45vh;margin: 5%;margin-left: 0;margin-top: 0;margin-bottom: 2%;">
+            <img style="border-radius: 6px;min-height: 100%;max-height: 35vh;min-width: 100%;" [src]="product.photo">
+            
+            <span style="font-size: 15px; position: absolute;top: 35vh;left: 0%; padding-bottom: 5%; padding-left: 0%; text-align: left;padding-right: 0%;border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; width: 95%;">
+              <!-- <span *ngIf="product.paid" style="background: #f7542e;color: #fff;font-size: 12px;border-radius: 4px;padding: 3px 5px;">Free</span> <br><br> -->
+              <b style="color: var(--ion-color-primary-contrast);"> {{product.description}}</b>
+            <br>
+            <span style="font-size: 13px;color: var(--ion-color-primary-contrast);">{{product.name}}</span>
+            <br>
+            <!-- <span style="font-size: 13px;color: var(--ion-color-primary-contrast);">{{product.location}}</span> -->
+            </span>
+            
+            </div>
+        </a>
+              
+        
+        </ion-slide>
+            
+        </ion-slides>
+      
+        <!-- <img src="https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2FCapture%2012.PNG?alt=media&token=2cef0251-2914-49bd-83ae-13b6bfccfb20"/> -->
+      </ion-col> 
+
+    </ion-row>
+
+    <!-- events listings -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-list mode="md" style="background: inherit;padding-top: 1%;">
+          <ion-list-header style="--background: inherit;">
+            <b> Popular </b>&nbsp; This Week
+          </ion-list-header>
+        </ion-list>
+        <ion-slides class="popular" style="padding-left: 1% !important;" [options]="sliderConfig">
+          <!-- box-shadow: 0 4px 16px rgba(8, 197, 18, 0.12); -->
+            <ion-slide style="min-width: max-content !important;" *ngFor="let product of festivals"> 
+              <ion-icon name="heart-outline" style="color: #000;border: 1px solid #c1c1c1;color: #717171; position: absolute;bottom: 5vh;right: 5vh;background: #fff;border-radius: 50%;padding: 1vh;cursor: pointer;z-index: 99;"></ion-icon>
+        <div style="max-height: 35vh;margin: 5%;margin-left: 0;margin-top: 0;margin-bottom: 2%;">
+        <img style="border-radius: 15px;min-height: 100%;max-height: 35vh;min-width: 100%;" [src]="product.photo">
+        
+        <span style="font-size: 15px; position: absolute;bottom: 1.5vh;left: 0%; padding-bottom: 5%; padding-left: 5%; text-align: left;padding-right: 5%;border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; width: 95%; background: linear-gradient(to top, rgb(0, 0, 0) 0%,rgba(255,255,255,0) 100%);">
+          <span *ngIf="product.paid" style="background: #f7542e;color: #fff;font-size: 12px;border-radius: 4px;padding: 3px 5px;">Free</span> <br><br>
+          <b style="color: var(--ion-color-light);"> {{product.description}}</b>
+        <br>
+        <span style="font-size: 13px;color: var(--ion-color-light);">{{product.name}}</span>
+        <br>
+        <span style="font-size: 13px;color: var(--ion-color-light);">{{product.location}}</span>
+        </span>
+        
+        </div>
+        
+        </ion-slide>
+            
+        </ion-slides>
+      
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-segment mode="md" (ionChange)="segmentChanged($event)" [(ngModel)] = "discover" value="all" style="width: max-content;">
+          <ion-segment-button value="all">
+            <ion-label>All</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="recommended">
+            <ion-label>For you</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="today">
+            <ion-label>Today</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+
+        <div class="plans" [ngSwitch] = "discover" style="padding-right: 0%;">
+
+
+            <!-- all tab -->
+            <div *ngSwitchCase = " 'all'" style="padding-top: 0px;">
+              <br>
+            <ion-slides class="popular" style="padding-left: 1% !important;" [options]="sliderConfig">
+            <!-- box-shadow: 0 4px 16px rgba(8, 197, 18, 0.12); -->
+            <ion-slide style="min-width: max-content !important;" *ngFor="let product of products"> 
+            <div style="max-height: 50vh;margin: 5%;margin-left: 0;margin-top: 0;">
+              <img style="border-radius: 6px;min-height: 100%;max-height: 50vh; min-width: 100%;" [src]="product.photo">
+            
+              <span style="font-size: 15px; position: absolute;bottom: 2vh;left: 0%; padding-bottom: 5%; padding-left: 5%; text-align: left;padding-right: 5%;border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; width: 95%; background: linear-gradient(to top, rgb(0, 0, 0) 0%,rgba(255,255,255,0) 100%);">
+                <span *ngIf="product.paid" style="background: #f7542e;color: #fff;font-size: 12px;border-radius: 4px;padding: 3px 5px;">Free</span> <br><br>
+                <b style="color: var(--ion-color-light);"> {{product.description}}</b>
+              <br>
+              <span style="font-size: 13px;color: var(--ion-color-light); line-height: 15px;text-overflow: ellipsis; overflow: hidden; display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;">{{product.name}}</span>
+        
+              <span style="font-size: 13px;color: var(--ion-color-light);">{{product.location}}</span>
+              </span>
+              
+            </div>
+                  
+            </ion-slide>
+
+            </ion-slides>
+            <!-- another listing under all tabs  -->
+            <ion-slides class="popular" style="padding-left: 1% !important;" [options]="sliderConfig">
+              <!-- box-shadow: 0 4px 16px rgba(8, 197, 18, 0.12); -->
+              <ion-slide style="min-width: max-content !important;" *ngFor="let product of recommended"> 
+              <div style="max-height: 50vh;margin: 5%;margin-left: 0;margin-top: 0;">
+                <img style="border-radius: 6px;min-height: 100%;max-height: 50vh; min-width: 100%;" [src]="product.photo">
+              
+                <span style="font-size: 15px; position: absolute;bottom: 2vh;left: 0%; padding-bottom: 5%; padding-left: 5%; text-align: left;padding-right: 5%;border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; width: 95%; background: linear-gradient(to top, rgb(0, 0, 0) 0%,rgba(255,255,255,0) 100%);">
+                  <span *ngIf="product.paid" style="background: #f7542e;color: #fff;font-size: 12px;border-radius: 4px;padding: 3px 5px;">Free</span> <br><br>
+                  <b style="color: var(--ion-color-light);"> {{product.description}}</b>
+                <br>
+                <span style="font-size: 13px;color: var(--ion-color-light); line-height: 15px;text-overflow: ellipsis; overflow: hidden; display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;">{{product.name}}</span>
+          
+                <span style="font-size: 13px;color: var(--ion-color-light);">{{product.location}}</span>
+                </span>
+                
+              </div>
+                    
+              </ion-slide>
+  
+              </ion-slides>
+              
+            </div>
+
+            <!-- recommendation tab  -->
+            <div *ngSwitchCase = " 'recommended'" style="padding-top: 0px;">
+              <br>
+            <ion-slides class="popular" style="padding-left: 1% !important;" [options]="sliderConfig">
+            <!-- box-shadow: 0 4px 16px rgba(8, 197, 18, 0.12); -->
+            <ion-slide style="min-width: max-content !important;" *ngFor="let product of recommended"> 
+            <div style="max-height: 50vh;margin: 5%;margin-left: 0;margin-top: 0;">
+              <img style="border-radius: 6px;min-height: 100%;max-height: 50vh; min-width: 100%;" [src]="product.photo">
+            
+              <span style="font-size: 15px; position: absolute;bottom: 2vh;left: 0%; padding-bottom: 5%; padding-left: 5%; text-align: left;padding-right: 5%;border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; width: 95%; background: linear-gradient(to top, rgb(0, 0, 0) 0%,rgba(255,255,255,0) 100%);">
+                <span *ngIf="product.paid" style="background: #f7542e;color: #fff;font-size: 12px;border-radius: 4px;padding: 3px 5px;">Free</span> <br><br>
+                <b style="color: var(--ion-color-light);"> {{product.description}}</b>
+              <br>
+              <span style="font-size: 13px;color: var(--ion-color-light); line-height: 15px;text-overflow: ellipsis; overflow: hidden; display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;">{{product.name}}</span>
+            
+              <span style="font-size: 13px;color: var(--ion-color-light);">{{product.location}}</span>
+              </span>
+              
+            </div>
+                  
+            </ion-slide>
+
+            </ion-slides>
+                    
+            </div>
+
+            <!-- today tab  -->
+            <div *ngSwitchCase = " 'today'" style="padding-top: 0px;">
+              <br>
+            <ion-slides class="popular" style="padding-left: 1% !important;" [options]="sliderConfig">
+            <!-- box-shadow: 0 4px 16px rgba(8, 197, 18, 0.12); -->
+            <ion-slide style="min-width: max-content !important;" *ngFor="let product of today"> 
+            <div style="max-height: 50vh;margin: 5%;margin-left: 0;margin-top: 0;">
+              <img style="border-radius: 6px;min-height: 100%;max-height: 50vh; min-width: 100%;" [src]="product.photo">
+            
+              <span style="font-size: 15px; position: absolute;bottom: 2vh;left: 0%; padding-bottom: 5%; padding-left: 5%; text-align: left;padding-right: 5%;border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; width: 95%; background: linear-gradient(to top, rgb(0, 0, 0) 0%,rgba(255,255,255,0) 100%);">
+                <span *ngIf="product.paid" style="background: #f7542e;color: #fff;font-size: 12px;border-radius: 4px;padding: 3px 5px;">Free</span> <br><br>
+                <b style="color: var(--ion-color-light);"> {{product.description}}</b>
+              <br>
+              <span style="font-size: 13px;color: var(--ion-color-light); line-height: 15px;text-overflow: ellipsis; overflow: hidden; display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;">{{product.name}}</span>
+              
+              <span style="font-size: 13px;color: var(--ion-color-light);">{{product.location}}</span>
+              </span>
+              
+            </div>
+                  
+            </ion-slide>
+
+            </ion-slides>
+                    
+            </div>
+       </div>
+      
+      </ion-col>
+    </ion-row>
+  
+    </ion-grid>
+
+</ion-content>

@@ -1,0 +1,42 @@
+
+ion-slides {
+  margin-left: 2vh;
+}
+
+ion-searchbar {
+  padding-inline-start: 0px !important; 
+  padding-inline-end: 0px !important;
+  margin-bottom: 0%;
+  width: 100%;
+  margin-left: -2vh;
+  
+}
+
+ion-slide {
+  span {
+    color: var(--ion-color-light-contrast);
+
+  }
+}
+
+ion-segment {
+  margin-left: 3vh !important;
+
+  ion-segment-button {
+    text-transform: capitalize !important;
+    --padding-start: none !important;
+    --padding-end: none !important;
+    min-width: auto;
+    margin-right: 5vh !important;
+
+    ion-label {
+      font-weight: 600;
+    }
+  }
+}
+
+ion-slide.usersonline {
+  width: 10vh !important;
+}
+
+

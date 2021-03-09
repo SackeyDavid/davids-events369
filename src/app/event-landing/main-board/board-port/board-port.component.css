@@ -1,0 +1,28 @@
+.board-port{
+    /* background-color: rgb(81 125 92); */
+    color: white;
+    height: 325px;    
+    border: solid;
+    border-color: white;
+    border-width: 8px;
+    border-radius: 16px;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.7);
+    --stripe: #6a9669;
+    --bg: #7a9980;
+    background: linear-gradient(135deg, var(--bg) 25%, transparent 25%) -50px 0,
+        linear-gradient(225deg, var(--bg) 25%, transparent 25%) -50px 0,
+        linear-gradient(315deg, var(--bg) 25%, transparent 25%),
+        linear-gradient(45deg, var(--bg) 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: var(--stripe);
+}
+
+.items-wrapper{
+    margin: 35px 25px;
+}

@@ -1,0 +1,53 @@
+
+.imgcircle {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+} 
+
+.active-item {
+    border-left: 4px solid #595959;
+}
+
+.active-header {
+    color: #f7542e;
+}
+
+.active-header-text {
+    font-weight: 600;
+}
+
+.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item-inner{
+    min-height: 1px !important;
+}
+    
+.label-md{
+    margin-bottom: 1px!important;
+    margin-top: 1px!important;
+}
+
+ion-item-divider{
+    margin-top: 8px;
+    min-height: 1px!important;
+}
+
+ion-button {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-transform: none!important;
+    padding-left: 20px;
+    padding-right: 20px;
+    --border-color: #f7542e;
+    color: #f7542e;
+}

@@ -1,0 +1,12 @@
+/* .sidenav-div{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.offset-md-2 {
+    margin-left: 12.666667%;
+} */
+
+.col-md-12{
+    overflow: auto;
+}

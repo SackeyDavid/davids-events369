@@ -1,0 +1,11 @@
+
+{
+  "defaultProject": "events369-ui",
+  "projects": {
+    "events369-ui": {
+      "name": "events369-ui",
+      "integrations": {},
+      "type": "angular"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+/* @import './assets/user-page-style.css'; */
+
+/* You can add global styles to this file, and also import other style files */
+.text-color-green{
+    color: rgb(15, 153, 15);
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.root{
+    background-color: rgb(247, 247, 247);
+    padding-bottom: 70px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  .root{
+    overflow: auto;
+  }

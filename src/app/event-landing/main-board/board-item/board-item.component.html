@@ -1,0 +1,33 @@
+<div [ngClass]="itemClasses" class="row mb-3">
+    <div class="col-md-8">
+        <div class="row time-div">
+            <div class="col-md-12">
+                09:00 - 11:00
+            </div>
+        </div>
+
+        <div class="row title-div">
+            <div class="col-md-12">
+                <b>How usability doesn't help in retaining your customers</b>
+            </div>
+        </div>
+
+        <div *ngIf="isActive == true" class="row mt-2">
+            <div class="col-md-12">
+                <a routerLink="/event-page/conference">
+                    <button class="btn btn-light">Join Now</button>
+                </a>                
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mt-2">
+        <div class="eventers-div">
+            <img src="../../assets/images/profiles/profile5.jpg" alt="" class="rounded-circle ml-1">
+            <img src="../../assets/images/profiles/profile2.jpg" alt="" class="rounded-circle ml-1">
+            <img src="../../assets/images/profiles/profile4.jpg" alt="" class="rounded-circle ml-1">
+        </div>
+    </div>
+</div>
+
+<hr>

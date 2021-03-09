@@ -1,0 +1,9 @@
+.stream-player{
+    width: 100%;
+    height: 450px;
+}
+
+.record-icon{
+    color: red;
+    padding-left: 6px;
+}

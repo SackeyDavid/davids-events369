@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { EventsService } from 'src/app/services/events/events.service';
 
@@ -11,9 +11,20 @@ import { EventsService } from 'src/app/services/events/events.service';
 export class NewHomePageComponent implements OnInit {
 
   sliderConfig = {
-    spaceBetween:   1,
+    spaceBetween:   0,
     // centeredSlides: true,
     slidesPerView: 6
+    // autoplay: true
+  }
+
+  bannerSliderConfig = {
+      spaceBetween:   1,
+      centeredSlides: true,
+      initialSlide: 1,
+      slidesPerView: 1,
+      autoplay: true,
+      speed: 2000
+    
   }
 
   public discover: string
@@ -40,11 +51,11 @@ export class NewHomePageComponent implements OnInit {
   ]
 
   products = [
-    { id: this.getRandomInt(0, 9999999999), location: 'Spintex', watching: '290', video: true, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fpexels-rodnae-productions-6193112.mp4?alt=media&token=49f3ece0-2867-471c-82f4-75c430a7fdde', time: ' 4 min ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: "Emy's Birthday Party", paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-09h39m03s359.webp?alt=media&token=6e8bba57-faba-42e5-9772-406d5d4258eb'},
-    { id: this.getRandomInt(0, 9999999999), location: 'Accra', watching: '323', video: false, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fpexels-kindel-media-6775036.mp4?alt=media&token=f39f516b-83de-405b-8c6c-b8f197203d02', time: '30 sec ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: 'Lancaster TechPreneur SDG Conference', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fteemu-paananen-bzdhc5b3Bxs-unsplash%20(2).jpg?alt=media&token=2f2767b5-6027-4d17-8d90-ff5864c915c5'},
-    { id: this.getRandomInt(0, 9999999999), location: 'Accra', watching: '563', video: true, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fpexels-thirdman-6193608.mp4?alt=media&token=0cee438a-c7e2-40a3-a708-436e7433f2b7', time: '50 min ago', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'Orchestra Chorals By Stephany Abam', paid: true, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h15m51s777.webp?alt=media&token=aef06499-be15-44d1-9286-1ee88bdee6bd'},
-    { id: this.getRandomInt(0, 9999999999), location: 'Tema', watching: '653', video: true, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fproduction%20ID%204705871.mp4?alt=media&token=2c6db7c3-5f8e-4db1-9925-47776231a3c5', time: '20 sec ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: 'Guitar Play With Adams', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h19m39s495.webp?alt=media&token=234935d2-51f5-441e-82d0-006e430ec833'},
-    { id: this.getRandomInt(0, 9999999999), location: 'Accra',  watching: '445',video: true, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fproduction%20ID%204057975.mp4?alt=media&token=6034584f-7f06-4dc0-b56d-ba10d11e0865', time: '24 min ago', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'Cooking At Home With Maame Ama', paid: true, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h21m48s626.webp?alt=media&token=dcbbfb60-5797-4c29-a551-7c4e7502dead'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Spintex', watching: '290', video: true, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fpexels-rodnae-productions-6193112.mp4?alt=media&token=49f3ece0-2867-471c-82f4-75c430a7fdde', time: ' 4 min ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: "Emy's Birthday Party", paid: false, price: '10', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2F7fb9590e-f026-41e4-ad64-a784be44a519.webp?alt=media&token=eacd3752-ff18-4393-9ae8-979f4a4c8d73'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Accra', watching: '323', video: true, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fpexels-kindel-media-6775036.mp4?alt=media&token=f39f516b-83de-405b-8c6c-b8f197203d02', time: '30 sec ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: 'Lancaster TechPreneur SDG Conference', paid: false, price: '17', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fteemu-paananen-bzdhc5b3Bxs-unsplash%20(2).jpg?alt=media&token=2f2767b5-6027-4d17-8d90-ff5864c915c5'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Accra', watching: '563', video: true, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fpexels-thirdman-6193608.mp4?alt=media&token=0cee438a-c7e2-40a3-a708-436e7433f2b7', time: '50 min ago', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'Orchestra Chorals By Stephany Abam', paid: true, price: '12', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h15m51s777.webp?alt=media&token=aef06499-be15-44d1-9286-1ee88bdee6bd'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Tema', watching: '653', video: true, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fproduction%20ID%204705871.mp4?alt=media&token=2c6db7c3-5f8e-4db1-9925-47776231a3c5', time: '20 sec ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: 'Guitar Play With Adams', paid: false, price: '13', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h19m39s495.webp?alt=media&token=234935d2-51f5-441e-82d0-006e430ec833'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Accra',  watching: '445',video: true, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fproduction%20ID%204057975.mp4?alt=media&token=6034584f-7f06-4dc0-b56d-ba10d11e0865', time: '24 min ago', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'Cooking At Home With Maame Ama', paid: true, price: '12', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h21m48s626.webp?alt=media&token=dcbbfb60-5797-4c29-a551-7c4e7502dead'},
     
   ]
 
@@ -139,9 +150,9 @@ export class NewHomePageComponent implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.discover = "Corporate Events";
-    this.temp_category = this.discover
-    if(document.getElementById(this.getCategoryId(this.discover))) document.getElementById(this.getCategoryId(this.discover)).style.setProperty('display', 'block');
+    this.discover = "All";
+    // this.temp_category = this.discover
+    // if(document.getElementById(this.getCategoryId(this.discover))) document.getElementById(this.getCategoryId(this.discover)).style.setProperty('display', 'block');
   }
 
   getCategoryId(category: string) {
@@ -158,21 +169,31 @@ export class NewHomePageComponent implements OnInit {
 
     if(!this.page_loaded) {
       
-        setTimeout(() => {
+        // setTimeout(() => {
           this.show_skeleton = false
           this.page_loaded = true
-          document.getElementById(this.getCategoryId(this.temp_category)).style.setProperty('display', 'none')
-        this.temp_category = this.discover
-        document.getElementById(this.getCategoryId(this.discover)).style.setProperty('display', 'block')
+        //   document.getElementById(this.getCategoryId(this.temp_category)).style.setProperty('display', 'none')
+        // this.temp_category = this.discover
+        // document.getElementById(this.getCategoryId(this.discover)).style.setProperty('display', 'block')
         
-        }, 5000);
+        // }, 5000);
     } else {
-      document.getElementById(this.getCategoryId(this.temp_category)).style.setProperty('display', 'none')
-      this.temp_category = this.discover
-      document.getElementById(this.getCategoryId(this.discover)).style.setProperty('display', 'block')
+      // document.getElementById(this.getCategoryId(this.temp_category)).style.setProperty('display', 'none')
+      // this.temp_category = this.discover
+      // document.getElementById(this.getCategoryId(this.discover)).style.setProperty('display', 'block')
       
     }
     
+  }
+
+  pauseVideo(video_id) {
+    // @ViewChild('videoPlayer') videoplayer: ElementRef;
+    // var vid  = document.getElementById(video_id)
+    // videoplayer.pause()
+  }
+
+  playVideo(video_id) {
+    // document.getElementById(video_id).play()
   }
 
 

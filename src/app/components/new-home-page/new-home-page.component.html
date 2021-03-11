@@ -219,7 +219,7 @@
                                                                                     data-original-uri="https://a0.muscache.com/im/pictures/lombard/MtTemplate-1438610-poster/original/085b76fa-3760-4385-8b86-97da2496b2f5.jpeg?aki_policy=poster"
                                                                                 /> -->
                                                                                 <!-- *ngIf="product.video" -->
-                                                                                <video id="video-{{product.id}}" style="border-radius: 6px;" width="200" height="300" loop="loop" autoplay="autoplay" [poster]="product.photo" preload="true">
+                                                                                <video class="live_videos" id="video-{{product.id}}" style="border-radius: 6px;" width="200" height="300" loop="loop" [poster]="product.photo" preload="true">
                                                                                     <source [src]="product.video_src" type="video/mp4" />
                                                                                 </video>
                                                                                 <div

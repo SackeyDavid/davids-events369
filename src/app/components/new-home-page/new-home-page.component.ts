@@ -35,9 +35,9 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
   
 
   banners = [
-    { id: this.getRandomInt(0, 9999999999), location: 'Accra', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'An evening with Chimamanda', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fsuad-kamardeen--hx4IFNQcZU-unsplash.jpg?alt=media&token=7ef0cb3a-8138-4408-9543-2e40c0626510'},
-    { id: this.getRandomInt(0, 9999999999), location: 'Accra', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'Adwoa Kotoko Season 12 Premieres', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fistockphoto-1234658597-170667a.jpg?alt=media&token=ead167a1-fba9-48a3-9848-0054a0fba833'},
-    { id: this.getRandomInt(0, 9999999999), location: 'Accra', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'Ojojo Drama Festival', paid: true, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fenoch-appiah-jr-kYrqetng_2U-unsplash.jpg?alt=media&token=328574b7-1474-45ca-9de1-b9c6e14f8acf'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Accra', description: 'Thur, Feb 18, 2021 7:00 PM GMT', title: 'Human Connections.', header: 'Online events.', subtitle: 'Made for You', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2Fbanner--202102-birthday.webp?alt=media&token=3c1bc412-f6e5-45fa-8aeb-216c7c480365'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Accra', description: 'Thur, Feb 18, 2021 7:00 PM GMT', title: 'Plan With Us', header: 'Moved by Music', subtitle: '', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2Fbanner--202102-music.webp?alt=media&token=101c7ce4-4ef4-4076-818a-87064447549a'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Accra', description: 'Thur, Feb 18, 2021 7:00 PM GMT', title: 'For Events Organizing', header: 'Biggest Platform', subtitle: '', paid: true, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2Fbanner--202102-outdoor.webp?alt=media&token=ac266e1b-d20c-4608-a0f5-bb24d7fbbba5'},
     
   ]
 

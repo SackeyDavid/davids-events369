@@ -156,10 +156,10 @@
             <ion-slide style="min-width: auto !important;padding: 1vh 2vh;" *ngFor="let product of banners"> 
                 <div class="home-banner-text">
                     <div class="home-banner-text-core" style="text-align: left;">
-                        <div class="home-banner-title"><span><span class="home-banner-weight-light">Online Events.</span> <br> <span>Human connections.</span></span>
+                        <div class="home-banner-title"><span><span class="home-banner-weight-light">{{product.header}}</span> <br> <span>{{product.title}}</span></span>
                         </div>
                         <div class="home-banner-subtitle home-banner-weight-light"><span>
-                        <span>Made for </span> <span class="home-banner-link">You.</span>
+                        <span>{{product.subtitle}} </span> <span class="home-banner-link"></span>
                         </span>
                         </div>
                     </div>
@@ -168,7 +168,7 @@
                     <div class="onzoom-homepage-htm-scale-box">
                         <div class="onzoom-homepage-htm-scale-box-wrap" style="padding-top: 48%;">
                             <div class="onzoom-homepage-htm-scale-box-core">
-                                <div class="home-banner-figure-core" style="background-image: url(&quot;https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2Fbanner--202102-birthday.webp?alt=media&token=3c1bc412-f6e5-45fa-8aeb-216c7c480365&quot;);"></div>
+                                <div class="home-banner-figure-core" style="background-image: url(&quot;{{product.photo}}&quot;);"></div>
                                 <!-- <div class="home-banner-figure-core" style="background-image: url(&quot;https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2Fmike-5.png?alt=media&token=6fb9d38d-da2d-415a-ac3e-0ecb1430f4b0&quot;);"></div> -->
                                 <!-- <div class="home-banner-figure-core" style="background-image: url(&quot;https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2Fmike-4.png?alt=media&token=fb9a227c-42db-4cd9-8790-3d0c0ff29a9e&quot;);"></div> -->
                                 <!-- https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2Fmike-4.png?alt=media&token=fb9a227c-42db-4cd9-8790-3d0c0ff29a9e -->

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, AfterContentInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { EventsService } from 'src/app/services/events/events.service';
 
@@ -8,7 +8,10 @@ import { EventsService } from 'src/app/services/events/events.service';
   templateUrl: './new-home-page.component.html',
   styleUrls: ['./new-home-page.component.scss']
 })
-export class NewHomePageComponent implements OnInit {
+export class NewHomePageComponent implements OnInit, AfterContentInit {
+
+  // @ViewChild('videoPlayer') myVideo: ElementRef;
+  // @ViewChild('videoPlayer', {read: ElementRef, static: true}) videoElement: any;
 
   sliderConfig = {
     spaceBetween:   0,
@@ -138,6 +141,33 @@ export class NewHomePageComponent implements OnInit {
     )
   }
 
+  ngAfterContentInit() {
+
+    setTimeout(() => {
+
+    //   var eventCard = document.getElementById('event-card-'+video_id) as HTMLVideoElement;
+    // video.pause()
+
+    //   video.oninput = e => {
+        //     // this.newMsg = ((<HTMLTextAreaElement>e.target).value)
+            
+        //     // this.scrollToBottom()
+    
+        // };
+      // this.videoElement = this.videoElement.nativeElement
+      // this.videoElement.pause()
+      // this.videoElement.style.color = '#fff'
+      // this.toolbarElement.style.paddingTop = '5%'
+      // if(this.getMarketId()) {
+      //   this.toolbarElement.style.setProperty('--background', 'var(--ion-color-' + this.getMarketId()+')'); 
+      // }
+
+      
+    }, 5000)
+
+    
+  }
+
   openMenu() {
     // this.menuController.toggle()
     this.menuController.enable(true)
@@ -187,13 +217,44 @@ export class NewHomePageComponent implements OnInit {
   }
 
   pauseVideo(video_id) {
-    // @ViewChild('videoPlayer') videoplayer: ElementRef;
-    // var vid  = document.getElementById(video_id)
-    // videoplayer.pause()
+    // hide pause control
+    // var pauseControl = document.getElementById('video-pause-'+video_id) as HTMLButtonElement
+    // pauseControl.onclick = e => {
+    //   ((<HTMLButtonElement>e.target).setAttribute('display', 'none'));
+    // }
+    document.getElementById('video-pause-'+video_id).style.setProperty('display', 'none')
+    // pauseControl
+
+    // pause video
+    var video = document.getElementById('video-'+video_id) as HTMLVideoElement;
+    video.pause()
+
+    // show play control
+    document.getElementById('video-play-'+video_id).style.setProperty('display', 'block')
+    // playControl
+    
+
+    //   video.oninput = e => {
+    //     // this.newMsg = ((<HTMLTextAreaElement>e.target).value)
+        
+    //     // this.scrollToBottom()
+
+    // };
+
+    // console.log(video, video_id)
   }
 
   playVideo(video_id) {
-    // document.getElementById(video_id).play()
+    // hide play control
+    document.getElementById('video-play-'+video_id).style.setProperty('display', 'none')
+    
+    // play video
+    var video = document.getElementById('video-'+video_id) as HTMLVideoElement;
+    video.play()
+
+    // show pause control
+    document.getElementById('video-pause-'+video_id).style.setProperty('display', 'block')
+    
   }
 
 

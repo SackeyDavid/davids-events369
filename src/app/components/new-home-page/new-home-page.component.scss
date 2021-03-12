@@ -998,4 +998,23 @@ ion-slides {
   .onzoom-homepage-event-item {
     width: inherit !important;
   }
+
+  @media (min-width: 744px) {
+    .starting-soon-slide {
+      width: 50% !important;
+    }
+    ._lc4tdwf {
+      width: 100% !important;
+    }
+  }
+
+  @media (min-width: 1128px) {
+    .starting-soon-slide {
+      width: 33.33% !important;
+    }
+    ._lc4tdwf {
+      width: 100% !important;
+    }
+  }
+  
   

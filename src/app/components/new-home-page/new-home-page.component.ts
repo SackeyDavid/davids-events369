@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef, ViewChild, AfterContentInit, AfterViewIn
 import { MenuController } from '@ionic/angular';
 import { EventsService } from 'src/app/services/events/events.service';
 import * as $ from "jquery";
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-new-home-page',
@@ -65,6 +66,8 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
 
   watched_videos = []
   _x = this;
+
+  // date: any
   
   constructor(
     private menuController: MenuController,
@@ -317,6 +320,15 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
     // show pause control
     document.getElementById('video-pause-'+video_id).style.setProperty('display', 'block')
     
+  }
+
+  getEventStartDateFormatted(date) {
+    return moment(date).format('ddd, MMM D, YYYY h:mmA')
+  }
+
+  getEventTime(date) {
+    return moment(date).format('h:mm A')
+
   }
 
 

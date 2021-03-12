@@ -62,11 +62,54 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
 
   show_skeleton: boolean = false
   page_loaded: boolean = false
+
+  watched_videos = []
+  _x = this;
   
   constructor(
     private menuController: MenuController,
     private eventservice: EventsService
-  ) {}
+  ) {
+      // console.log(this._x); 
+      var _x = this._x
+      $(document).ready(function(){
+        //  alert('JQuery is working!!');
+        $("._1g2tewe5").on("mouseover", function(event) {
+        // console.log(_x.watched_videos)
+        // show video div
+        $(this).find('video').get(0).style.setProperty('display', 'block')
+
+        if(_x.watched_videos.length > 0) {
+          
+          if(($.inArray($(this).find('video').get(0).id, _x.watched_videos)) == -1) {
+              
+              $(this).find('video').get(0).play()
+
+              // _x.watched_videos.push($(this).find('video').get(0).id)
+          } else {
+
+          }
+          
+        } else {
+
+          $(this).find('video').get(0).play()
+
+          // _x.watched_videos.push($(this).find('video').get(0).id)
+        }
+        
+        
+      
+    
+      }).on('mouseout', function(event) {
+        $(this).find('video').get(0).pause()
+        $(this).find('video').get(0).currentTime = 0;
+        $(this).find('video').get(0).style.setProperty('display', 'none')
+        // this.pause();
+    
+      });
+      
+    })
+  }
 
   ngOnInit() {
     this.eventservice.getAllEvents()
@@ -89,11 +132,11 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
   }
 
   ngAfterViewInit() {
-    $(document).ready(function(){
+    // $(document).ready(function(){
     //  alert('JQuery is working!!');
-    var watched_videos = []
+    // var watched_videos = []
     
-      $("._1g2tewe5").on("mouseover", function(event) {
+      // $("._1g2tewe5").on("mouseover", function(event) {
         
         // check if any videos have been watched
 
@@ -104,23 +147,23 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
         // if they've watched the video automatically already
         // by hovering on the video
         
-        if(watched_videos.length > 0) {
+        // if(watched_videos.length > 0) {
           
-          if(($.inArray($(this).find('video').get(0).id, watched_videos)) == -1) {
+          // if(($.inArray($(this).find('video').get(0).id, watched_videos)) == -1) {
               
-              $(this).find('video').get(0).play()
+              // $(this).find('video').get(0).play()
 
-              watched_videos.push($(this).find('video').get(0).id)
-          } else {
+              // watched_videos.push($(this).find('video').get(0).id)
+          // } else {
 
-          }
+          // }
           
-        } else {
+        // } else {
 
-          $(this).find('video').get(0).play()
+          // $(this).find('video').get(0).play()
 
-          watched_videos.push($(this).find('video').get(0).id)
-        }
+          // watched_videos.push($(this).find('video').get(0).id)
+        // }
         
         
         
@@ -129,12 +172,12 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
         // console.log(watched_videos)
         // this.play();
     
-      }).on('mouseout', function(event) {
+      // }).on('mouseout', function(event) {
         // $(this).find('video').get(0).pause()
         // this.pause();
     
-      });
-    })
+      // });
+    // })
   }
 
   ngAfterContentInit() {
@@ -239,6 +282,8 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
     // var video = document.getElementById('video-'+video_id) as HTMLVideoElement;
     // video.pause()
     $('#video-'+video_id).get(0).pause()
+    this._x.watched_videos.push($('#video-'+video_id).get(0).id)
+    // console.log(_x)
 
 
     // show play control
@@ -264,6 +309,10 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
     // var video = document.getElementById('video-'+video_id) as HTMLVideoElement;
     // video.play()
     $('#video-'+video_id).get(0).play()
+    // this._x.watched_videos.sl($('#video-'+video_id).get(0).id)
+    this._x.watched_videos = $.grep(this._x.watched_videos, function(value) {
+      return value != $('#video-'+video_id).get(0).id;
+    });
 
     // show pause control
     document.getElementById('video-pause-'+video_id).style.setProperty('display', 'block')

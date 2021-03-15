@@ -3,6 +3,7 @@ import { MenuController, IonSlides } from '@ionic/angular';
 import { EventsService } from 'src/app/services/events/events.service';
 import * as $ from "jquery";
 import * as moment from 'moment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-home-page',
@@ -31,7 +32,7 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
   }
   slideNextStartingSoon() {
     this.slidesStartingSoon.slideNext();
-    // console.log('clicked')
+    console.log('clicked')
   }
 
   slidePrevsPopular() {
@@ -74,19 +75,19 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
   banners = [
     { id: this.getRandomInt(0, 9999999999), location: 'Accra', description: 'Thur, Feb 18, 2021 7:00 PM GMT', title: 'Human Connections.', header: 'Online events.', subtitle: 'Made for You', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2Fbanner--202102-birthday.webp?alt=media&token=3c1bc412-f6e5-45fa-8aeb-216c7c480365'},
     { id: this.getRandomInt(0, 9999999999), location: 'Accra', description: 'Thur, Feb 18, 2021 7:00 PM GMT', title: 'Plan With Us', header: 'Moved by Music', subtitle: '', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2Fbanner--202102-music.webp?alt=media&token=101c7ce4-4ef4-4076-818a-87064447549a'},
-    { id: this.getRandomInt(0, 9999999999), location: 'Accra', description: 'Thur, Feb 18, 2021 7:00 PM GMT', title: 'For Events Organizing', header: 'Biggest Platform', subtitle: '', paid: true, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2Fbanner--202102-outdoor.webp?alt=media&token=ac266e1b-d20c-4608-a0f5-bb24d7fbbba5'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Accra', description: 'Thur, Feb 18, 2021 7:00 PM GMT', title: 'Biggest Platform', header: 'Events369', subtitle: 'For Events Organizing', paid: true, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2Fbanner--202102-outdoor.webp?alt=media&token=ac266e1b-d20c-4608-a0f5-bb24d7fbbba5'},
     
   ]
 
   products = [
-    { id: this.getRandomInt(0, 9999999999), location: 'Spintex', watching: '290', video: false, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fpexels-rodnae-productions-6193112.mp4?alt=media&token=49f3ece0-2867-471c-82f4-75c430a7fdde', time: ' 4 min ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: "Emy's Birthday Party", paid: false, price: '10', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-09h39m03s359.webp?alt=media&token=6e8bba57-faba-42e5-9772-406d5d4258eb'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Spintex', watching: '290', video: false, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fpexels-rodnae-productions-6193112.mp4?alt=media&token=49f3ece0-2867-471c-82f4-75c430a7fdde', time: ' 4 sec ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: "Emy's Birthday Party", paid: false, price: '10', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-09h39m03s359.webp?alt=media&token=6e8bba57-faba-42e5-9772-406d5d4258eb'},
     { id: this.getRandomInt(0, 9999999999), location: 'Accra', watching: '323', video: false, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fpexels-kindel-media-6775036.mp4?alt=media&token=f39f516b-83de-405b-8c6c-b8f197203d02', time: '30 sec ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: 'Lancaster TechPreneur SDG Conference', paid: false, price: '17', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fteemu-paananen-bzdhc5b3Bxs-unsplash%20(2).jpg?alt=media&token=2f2767b5-6027-4d17-8d90-ff5864c915c5'},
-    { id: this.getRandomInt(0, 9999999999), location: 'Accra', watching: '563', video: true, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fpexels-thirdman-6193608.mp4?alt=media&token=0cee438a-c7e2-40a3-a708-436e7433f2b7', time: '50 min ago', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'Orchestra Chorals By Stephany Abam', paid: true, price: '12', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h15m51s777.webp?alt=media&token=aef06499-be15-44d1-9286-1ee88bdee6bd'},
-    { id: this.getRandomInt(0, 9999999999), location: 'Tema', watching: '653', video: false, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fproduction%20ID%204705871.mp4?alt=media&token=2c6db7c3-5f8e-4db1-9925-47776231a3c5', time: '20 sec ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: 'Guitar Play With Adams', paid: false, price: '13', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h19m39s495.webp?alt=media&token=234935d2-51f5-441e-82d0-006e430ec833'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Accra', watching: '563', video: true, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fpexels-thirdman-6193608.mp4?alt=media&token=0cee438a-c7e2-40a3-a708-436e7433f2b7', time: '10 min ago', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'Orchestra Chorals By Stephany Abam', paid: true, price: '12', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h15m51s777.webp?alt=media&token=aef06499-be15-44d1-9286-1ee88bdee6bd'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Tema', watching: '653', video: false, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fproduction%20ID%204705871.mp4?alt=media&token=2c6db7c3-5f8e-4db1-9925-47776231a3c5', time: '20 min ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: 'Guitar Play With Adams', paid: false, price: '13', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h19m39s495.webp?alt=media&token=234935d2-51f5-441e-82d0-006e430ec833'},
     { id: this.getRandomInt(0, 9999999999), location: 'Accra',  watching: '445',video: false, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fproduction%20ID%204057975.mp4?alt=media&token=6034584f-7f06-4dc0-b56d-ba10d11e0865', time: '24 min ago', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'Cooking At Home With Maame Ama', paid: true, price: '12', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h21m48s626.webp?alt=media&token=dcbbfb60-5797-4c29-a551-7c4e7502dead'},
     { id: this.getRandomInt(0, 9999999999), location: 'Accra', watching: '563', video: true, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fpexels-thirdman-6193608.mp4?alt=media&token=0cee438a-c7e2-40a3-a708-436e7433f2b7', time: '50 min ago', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'Orchestra Chorals By Stephany Abam', paid: true, price: '12', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h15m51s777.webp?alt=media&token=aef06499-be15-44d1-9286-1ee88bdee6bd'},
-    { id: this.getRandomInt(0, 9999999999), location: 'Tema', watching: '653', video: false, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fproduction%20ID%204705871.mp4?alt=media&token=2c6db7c3-5f8e-4db1-9925-47776231a3c5', time: '20 sec ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: 'Guitar Play With Adams', paid: false, price: '13', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h19m39s495.webp?alt=media&token=234935d2-51f5-441e-82d0-006e430ec833'},
-    { id: this.getRandomInt(0, 9999999999), location: 'Accra',  watching: '445',video: false, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fproduction%20ID%204057975.mp4?alt=media&token=6034584f-7f06-4dc0-b56d-ba10d11e0865', time: '24 min ago', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'Cooking At Home With Maame Ama', paid: true, price: '12', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h21m48s626.webp?alt=media&token=dcbbfb60-5797-4c29-a551-7c4e7502dead'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Tema', watching: '653', video: false, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fproduction%20ID%204705871.mp4?alt=media&token=2c6db7c3-5f8e-4db1-9925-47776231a3c5', time: '1 hr ago', description: 'Sun, Feb 21, 2021 8:00 PM GMT', name: 'Guitar Play With Adams', paid: false, price: '13', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h19m39s495.webp?alt=media&token=234935d2-51f5-441e-82d0-006e430ec833'},
+    { id: this.getRandomInt(0, 9999999999), location: 'Accra',  watching: '445',video: false, video_src: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fvideo%2Fproduction%20ID%204057975.mp4?alt=media&token=6034584f-7f06-4dc0-b56d-ba10d11e0865', time: '1 hr ago', description: 'Thur, Feb 18, 2021 7:00 PM GMT', name: 'Cooking At Home With Maame Ama', paid: true, price: '12', photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fvlcsnap-2021-03-05-11h21m48s626.webp?alt=media&token=dcbbfb60-5797-4c29-a551-7c4e7502dead'},
     
   ]
 
@@ -106,11 +107,36 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
   watched_videos = []
   _x = this;
 
+  recommended = {
+    
+      
+        'data' : [
+          { id: this.getRandomInt(0, 9999999999), location: 'Kumasi', time: '50 min ago', recurring: 'Yes', drop_in: 'Yes', description: 'Thur, Feb 18, 2021 7:00 PM GMT', title: "Abrantie's Birthday", paid: true, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fphoto-1588430643927-defdd1957480.webp?alt=media&token=7a4e6e7b-a2e4-4d24-921a-1550add1536c'},
+          { id: this.getRandomInt(0, 9999999999), location: 'Tema', time: '20 sec ago', recurring: 'Yes', drop_in: 'Yes', description: 'Sun, Feb 21, 2021 8:00 PM GMT', title: 'Shoot Like a Pro - Sam Bannerman', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fphoto-1590568569762-9c51532a51d9.webp?alt=media&token=edabf92a-705e-4a29-bc9d-7b1e568c9143'},
+          { id: this.getRandomInt(0, 9999999999), location: 'Accra', time: '14 min ago', recurring: 'Yes', drop_in: 'Yes', description: 'Thur, Feb 18, 2021 7:00 PM GMT', title: "Esinam's Dairies", paid: true, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fphoto-1607601016772-33a33a6abc39.webp?alt=media&token=9ba47142-6610-4bd0-9025-137ed69b6f4f'},
+          { id: this.getRandomInt(0, 9999999999), location: 'Koforidua', time: ' 4 min ago', recurring: 'Yes', drop_in: 'Yes', description: 'Sun, Feb 21, 2021 8:00 PM GMT', title: 'GuitarZard: A Night With Sherry', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fphoto-1611665427903-2acc4d77fe15.webp?alt=media&token=7a101c6a-d45d-4475-bc75-77ea60f2d69f'},
+          { id: this.getRandomInt(0, 9999999999), location: 'Takoradi', time: '30 sec ago', recurring: 'Yes', drop_in: 'Yes', description: 'Sun, Feb 21, 2021 8:00 PM GMT', title: 'The Boyz - Sampele Edition', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fphoto-1612139776934-02378cdb1ccd.webp?alt=media&token=d6475680-73bc-405d-b3a8-fb9a40f8e875'},
+          { id: this.getRandomInt(0, 9999999999), location: 'Kumasi', time: '50 min ago', recurring: 'Yes', drop_in: 'Yes', description: 'Thur, Feb 18, 2021 7:00 PM GMT', title: "Abrantie's Birthday", paid: true, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fphoto-1588430643927-defdd1957480.webp?alt=media&token=7a4e6e7b-a2e4-4d24-921a-1550add1536c'},
+          { id: this.getRandomInt(0, 9999999999), location: 'Tema', time: '20 sec ago', recurring: 'Yes', drop_in: 'Yes', description: 'Sun, Feb 21, 2021 8:00 PM GMT', title: 'Shoot Like a Pro - Sam Bannerman', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fphoto-1590568569762-9c51532a51d9.webp?alt=media&token=edabf92a-705e-4a29-bc9d-7b1e568c9143'},
+          { id: this.getRandomInt(0, 9999999999), location: 'Accra', time: '14 min ago', recurring: 'Yes', drop_in: 'Yes', description: 'Thur, Feb 18, 2021 7:00 PM GMT', title: "Esinam's Dairies", paid: true, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fphoto-1607601016772-33a33a6abc39.webp?alt=media&token=9ba47142-6610-4bd0-9025-137ed69b6f4f'},
+          { id: this.getRandomInt(0, 9999999999), location: 'Koforidua', time: ' 4 min ago', recurring: 'Yes', drop_in: 'Yes', description: 'Sun, Feb 21, 2021 8:00 PM GMT', title: 'GuitarZard: A Night With Sherry', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fevents%2Fphoto-1611665427903-2acc4d77fe15.webp?alt=media&token=7a101c6a-d45d-4475-bc75-77ea60f2d69f'},
+          
+        ]
+        
+      }
+
+  // event_categories = [
+  //   { temp_name: 'Corporate Events'},
+  //   { temp_name: 'Social Events'}
+  // ]
+  
+
   // date: any
   
   constructor(
     private menuController: MenuController,
-    private eventservice: EventsService
+    private eventservice: EventsService,
+    private router: Router
   ) {
       // console.log(this._x); 
       var _x = this._x
@@ -154,6 +180,8 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
   }
 
   ngOnInit() {
+    // console.log(this.recommended)
+    // this.events = this.recommended
     this.eventservice.getAllEvents()
     .subscribe(
       data => {
@@ -368,6 +396,10 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
   getEventTime(date) {
     return moment(date).format('h:mm A')
 
+  }
+
+  openAccountsPage() {
+    this.router.navigate(['account-settings'])
   }
 
 

@@ -1036,3 +1036,40 @@ ion-slides {
   }
   
   
+//   main site 
+._mwt4r90::after {
+    clear: both !important;
+    display: table !important;
+}
+
+._mwt4r90::before {
+    display: table !important;
+}
+
+._mwt4r90 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+}
+
+._is5jnq {
+    --page-shell-max-content-width: 1440px !important;
+}
+
+@media (min-width: 1128px) {
+    ._mwt4r90 {
+        min-width: 1080px !important;
+    }
+
+}
+
+@media (min-width: 744px) {
+    ._mwt4r90 {
+        max-width: 696px !important;
+    }
+}
+
+
+

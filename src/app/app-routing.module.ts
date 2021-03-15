@@ -22,15 +22,15 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./components/new-home-page/new-home-page.module').then( m => m.NewHomePageModule)
   },
-  // {
-  //   path: '',
-  //   redirectTo: '/home',
-  //   pathMatch: 'full'
-  // },
   {
     path: '',
-    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
+  // {
+  //   path: '',
+  //   loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+  // },
   // {
   //   path: 'discover',
   //   loadChildren: () => import('./discover/discover.module').then( m => m.DiscoverPageModule)
@@ -43,6 +43,10 @@ const routes: Routes = [
   //   path: 'settings',
   //   loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   // },
+  {
+    path: 'account-settings',
+    loadChildren: () => import('./account-settings/account-settings.module').then( m => m.AccountSettingsPageModule)
+  },
 ];
 
 @NgModule({

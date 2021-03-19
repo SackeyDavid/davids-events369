@@ -20,33 +20,51 @@ export class MenuPage implements OnInit {
 
   pages = [
     {
-      title: 'Home',
-      url: '/menu/user-page',
-      icon: 'home-outline',
+      title: 'Profile',
+      url: '/account/profile',
+      icon: 'person-circle-outline',
       beta: false
     },
     {
-      title: 'Discover',
-      url: '/menu/discover',
-      icon: 'search-outline',
+      title: 'Personal Info',
+      url: '/account/personal-info',
+      icon: 'person-add-outline',
       beta: true
     },
     {
-      title: 'Create Event',
-      url: '/menu/settings',
-      icon: 'add',
+      title: 'Login & Security',
+      url: '/account/security',
+      icon: 'shield-checkmark-outline',
+      beta: false
+    },
+    {
+      title: 'Payment',
+      url: '/account/payments',
+      icon: 'card-outline',
+      beta: false
+    },
+    {
+      title: 'Calendar',
+      url: '/account/calendar',
+      icon: 'calendar-outline',
       beta: false
     },
     // {
-    //   title: 'Messages',
+    //   title: 'M',
     //   url: '/menu/messages',
-    //   icon: 'chatbubble-ellipses-outline',
-    //   beta: true
+    //   icon: 'add',
+    //   beta: false
     // },
     {
-      title: 'Preferences',
-      url: '/menu/messages',
-      icon: 'settings-outline',
+      title: 'Messages',
+      url: '/account/messages',
+      icon: 'chatbubble-ellipses-outline',
+      beta: true
+    },
+    {
+      title: 'Favorites',
+      url: '/account/favorites',
+      icon: 'heart-outline',
       beta: false
     },
     

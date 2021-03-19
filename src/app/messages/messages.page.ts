@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-messages',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessagesPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
+  }
+
+  openAccountsPage() {
+    // this.router.navigate(['account-settings'])
+    this.router.navigate(['account/profile'])
   }
 
 }

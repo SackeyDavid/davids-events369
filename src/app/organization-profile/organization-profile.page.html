@@ -1,0 +1,414 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>account-settings</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  
+  <div id="root">
+    <header role="navigation" class="fixed z-30 left-0 top-0 w-full h-18 px-6 bg-white shadow-header flex items-center justify-between">
+        <div>
+            <div class="flex items-center justify-start"><a routerLink="/home" class="block relative" rel="noopener noreferrer" style="width: 133.6px;" aria-label="Zoom logo">
+              <!-- <svg id="logo_svg__Layer_1" x="0" y="0" viewBox="0 0 483 72.3" xml:space="preserve" class="block h-5"><style>.logo_svg__st0,.logo_svg__st1{fill-rule:evenodd;clip-rule:evenodd;fill:#2d8cff}.logo_svg__st1{fill:#414155}</style><path class="logo_svg__st0" d="M61.4 10.6C54.4 3.6 45.2 0 36 0h-.1c-9.2 0-18.4 3.5-25.4 10.6-14 14.1-14 36.8 0 50.9 14 14 36.8 14 50.8 0 14.1-14 14.1-36.8.1-50.9zM51.2 51.3c-8.4 8.4-22.1 8.4-30.5 0s-8.4-22.1 0-30.5 22.1-8.4 30.5 0 8.4 22.1 0 30.5z"></path><path class="logo_svg__st1" d="M292.7 10.6c-7-7-16.2-10.6-25.4-10.6h-.1c-9.2 0-18.4 3.5-25.4 10.6-14 14.1-14 36.8 0 50.9 14 14 36.8 14 50.8 0 14.1-14 14.1-36.8.1-50.9zm-10.2 40.7c-8.4 8.4-22.1 8.4-30.5 0s-8.4-22.1 0-30.5 22.1-8.4 30.5 0c8.5 8.4 8.5 22.1 0 30.5z"></path><path class="logo_svg__st1" d="M368.2 10.6c-7-7-16.2-10.5-25.4-10.6-9.2 0-18.4 3.5-25.4 10.6-14 14.1-14 36.8 0 50.9 14 14 36.8 14 50.8 0s14-36.8 0-50.9zM358 51.3c-8.4 8.4-22.1 8.4-30.5 0s-8.4-22.1 0-30.5 22.1-8.4 30.5 0c8.5 8.4 8.5 22.1 0 30.5zM177.4 71.9l3.6.2h53.9l-.2-3.6c-.5-5.9-4.7-10.2-10.6-10.6l-3.6-.2h-32.4l43.2-43.1-.2-3.6C230.8 5 226.4.7 220.5.4l-3.6-.2H163l.2 3.6c.5 5.9 4.7 10.3 10.6 10.6l3.6.2h32.4l-43.2 43.2.2 3.6c.3 5.8 4.6 10.1 10.6 10.5zM423.5 21.7c1.2 2.1 1.6 4.5 1.7 7.2l.2 3.6v25.2l.2 3.6c.4 5.9 4.7 10.2 10.6 10.6l3.6.2V32.5l.2-3.6c.1-2.7.5-5.1 1.8-7.2 2.5-4.3 7.1-7.1 12.4-7.1 5.3 0 10 2.9 12.5 7.2 1.2 2.1 1.6 4.6 1.7 7.2l.2 3.6v25.2l.2 3.6c.4 5.9 4.7 10.3 10.6 10.6l3.6.2V29.1C483 13.2 470.1.3 454.2.3c-8.6 0-16.3 3.8-21.6 9.7-5.2-6-13-9.7-21.6-9.7-6 0-11.5 1.8-16.1 4.9-2.8-3.1-9-4.9-12.6-4.9v72l3.6-.2c6-.4 10.4-4.6 10.6-10.6l.2-3.6V32.7l.2-3.6c.1-2.7.5-5.1 1.8-7.2 2.5-4.3 7.1-7.2 12.4-7.2 5.3-.2 9.9 2.7 12.4 7z"></path><path class="logo_svg__st0" d="M108.3.1c-7.1 0-13.7 2.3-19 6.1C86.2 2 79 .1 75.5.1v72l3.6-.2c6.1-.4 10.5-4.7 10.7-10.7l.2-3.6V33.1c0-10.1 8.2-18.3 18.3-18.3s18.3 8.2 18.3 18.3v24.8l.2 3.4c.2 6.1 4.7 10.3 10.7 10.7l3.6.2V33.1c.1-18.3-14.6-33-32.8-33z"></path></svg> -->
+              <b style="color: #f05537;font-size: 24px;"> events</b> <b style="color: #1e0a3c;font-size: 24px;">369</b>
+              <div class="w-10 h-5 text-center leading-5 text-white bg-primary absolute right-0 top-0 font-semibold" style="font-size: 11px; border-radius: 6px; margin-right: -48px; margin-top: -10px; box-shadow: rgba(0, 0, 0, 0.13) 0px 0px 8px;display: none;">BETA</div></a></div>
+        </div>
+        
+        <ion-searchbar style="width: 45%; margin-top: 0vh;padding-bottom: 0px; margin-left: -17vh;" id="first-tab" mode="md" class="store" placeholder="What do you want to attend?"></ion-searchbar>
+        <div class="h-full">
+          <!-- <div class="consumer-header__search" data-spec="consumer-header-search"><div class="consumer-header__search-autocomplete"><div class="search-input__query" data-spec="event-autocomplete"><div tabindex="-1"><div class="eds-autocomplete-field" data-spec="autocompletefield-field"><div class="eds-autocomplete-field__dropdown-holder"><div class="eds-field-styled eds-l-mar-bot-2 eds-field-styled--basic eds-field-styled--borderless" data-automation="input-field-wrapper" data-spec="input-field"><div class="eds-field-styled__border-simulation eds-field-styled__border-simulation--empty"><div class="eds-field-styled__internal"><span class="eds-field-styled__aside eds-field-styled__aside-prefix eds-field-styled__aside--icon"><i class="eds-vector-image eds-icon--small" data-spec="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 14c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm3.5.9c-1 .7-2.2 1.1-3.5 1.1-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6c0 1.3-.4 2.5-1.1 3.4l5.1 5.1-1.5 1.5-5-5.1z"></path></svg></i></span><div class="eds-field-styled__input-container"><div class="eds-field-styled__label-wrapper"><label class="eds-field-styled__label eds-is-hidden-accessible" id="eventPickerglobal-header-desktop-search-label" for="eventPickerglobal-header-desktop-search" data-spec="label-label"><span class="eds-label__content">autocomplete</span></label></div><input data-spec="input-field-input-element" class="eds-field-styled__input" id="eventPickerglobal-header-desktop-search" maxlength="1000" name="eventPickerglobal-header-desktop-search" placeholder="Search events" role="combobox" type="search" aria-expanded="false" aria-autocomplete="list" autocomplete="off" tabindex="0" value=""></div></div></div></div></div></div></div></div></div></div> -->
+            <div class="weak-hidden sm:flex justify-between items-center text-sm font-semibold h-full">
+               
+                <!-- when user isn't logged in      -->
+               
+                <!-- <div class="dropdown" style="height: 100% !important;">
+                        <div class="dropbtn" style="display: grid;height: 100%;">
+                            <a style="padding-right: 2.5rem !important; padding-left: 1.5rem !important;" class=" ml-3 sm:ml-5 md:ml-10 h-full text-minor flex items-center border-b-3 border-transparent" role="nav">
+                                <div class="font-semibold">About <ion-icon style="margin-bottom: -0.6vh;" name="chevron-down-outline"></ion-icon> </div>
+                                
+                            </a>
+                        </div>
+                        
+                        <div class="dropdown-content">
+                            <a href="#">Overview</a>
+                            <a href="#">Pricing</a>
+                            <a href="#">Blog</a>
+                            <a href="#">Resources</a>
+                          </div>
+                    </div>
+                    
+                
+                    <div class="dropdown_help" style="height: 100% !important;">
+                        <div class="dropbtn_help" style="display: grid;height: 100%;">
+                            <a style="padding-right: 2.5rem !important; padding-left: 1.5rem !important;" class=" ml-3 sm:ml-5 md:ml-10 h-full text-minor flex items-center border-b-3 border-transparent" role="nav">
+                                <div class="font-semibold">Help <ion-icon style="margin-bottom: -0.6vh;" name="chevron-down-outline"></ion-icon> </div>
+                                
+                            </a>
+                        </div>
+                        
+                        <div class="dropdown-content_help">
+                            <a href="#">How it works</a>
+                            <a href="#">What does it cost to host an event</a>
+                            <a href="#">Where are my tickets</a>
+                            <a href="#">How to contact the event organizer</a>
+                            
+                            <a href="#" style="border-top: 1px solid #ddd;">Help Center</a>
+                          </div>
+                    </div>
+                    
+                <a class="ml-3 sm:ml-5 md:ml-10 text-primary h-full flex items-center border-b-3 border-transparent" style="margin-right: 1rem !important;" role="nav" href="/e/becomeahost/intro" target="_blank" rel="noreferrer noopener">
+                    <div class="font-semibold">Host an Event</div>
+                </a>
+                <div class="pr-5 flex content-center items-center justify-start">
+                    
+                    <a href="#" class="h-full border-b-3 border-transparent ml-3 sm:ml-5 md:ml-10 flex items-center text-minor hover:text-primary" role="nav">
+                       
+                        <span>Sign In</span>
+                       
+                    </a>
+                </div> -->
+
+                
+                <!-- when user is logged in  -->
+               
+            <a  style="padding-right: 2.5rem !important;" class="ml-3 sm:ml-5 md:ml-10 text-primary h-full flex items-center border-b-3 border-transparent" role="nav" href="/e/becomeahost/intro" target="_blank" rel="noreferrer noopener">
+                <div class="font-semibold">Become a Host</div>
+            </a>
+                <!-- <div style="height: 100% !important;">
+                    <div class="dropbtn" style="display: grid;height: 100%;">
+                        <a style="padding-right: 2.5rem !important;" class=" ml-3 sm:ml-5 md:ml-10 h-full text-minor flex items-center border-b-3 border-transparent" role="nav">
+                            <div class="font-semibold"> <ion-icon style="margin-bottom: -0.6vh;font-size: large;" name="heart-outline"></ion-icon> Favorites</div>
+                            
+                        </a>
+                    </div>
+                    
+                </div> -->
+                
+            
+                <!-- <div style="height: 100% !important;">
+                    <div style="display: grid;height: 100%;">
+                        <a style="padding-right: 2.5rem !important;" class=" ml-3 sm:ml-5 md:ml-10 h-full text-minor flex items-center border-b-3 border-transparent" role="nav">
+                            <div class="font-semibold"> 
+                                <ion-icon style="margin-bottom: -0.6vh;font-size: large;" name="ticket-outline"></ion-icon>
+                               <ion-icon style="margin-bottom: -0.6vh;font-size: large;" name="globe-outline"></ion-icon>
+                               </div>
+                            
+                        </a>
+                    </div>
+                    
+                </div> -->
+                
+            <div style="height: 100% !important; display: grid" class="dropdown_user pr-5 flex content-center items-center justify-start">
+               
+                <a href="#" class="h-full border-b-3 border-transparent ml-3 sm:ml-5 md:ml-10 flex items-center text-minor hover:text-primary" role="nav">
+                    <div class="" style="height: 100% !important;">
+                        <div class="dropbtn_user" style="display: grid;height: 100%;">
+                               <span style="display: flex;border: 1px solid #d7d7d7;padding: 6px 10px;border-radius: 30px;">
+                                <ion-avatar style="margin-top: 0vh;margin-bottom: 0;height: 4vh;width: 4vh;">
+                                    <img style="border: 2px solid var(--ion-color-step-100);" src="https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fuser%20avatars%2F1596863197908.jpg?alt=media&token=a9ce07c3-b3d8-4cf1-898a-7d0740a7ecf5" />
+                                </ion-avatar> 
+                                
+                                 <ion-icon style="margin-top: 1vh;margin-left: 1vh;" name="chevron-down-outline"></ion-icon>
+                               </span>
+                        </div>
+                        
+                        <div class="dropdown-content_user"> 
+                            <!-- <a href="#" id="browse_events_link">Browse Events</a> -->
+                             <a href="#" id="browse_events_link"><b>Notifications <span class="dot"></span> </b> </a>
+                            <a href="#"> <b> Favorites</b></a>
+                            <a href="#"> <b> Following</b></a>
+                            <a href="#" style="border-top: 1px solid #ddd;">Manage event</a>
+                            <a href="#">Tickets (0)</a> 
+                            <!-- <a href="#">Credits</a> -->
+                            <!-- <a href="#">Collections</a> -->
+                            <!-- <a href="#">Interests</a> -->
+                            
+                            
+                            <!-- <a href="#">Messages</a> -->
+                            <!-- <a href="#">Events</a> -->
+                            <!-- <a href="#">Saved</a> -->
+
+                             <a href="#">Host an event</a>
+                            <a routerLink="/account-settings" (click)="openAccountsPage()" style="border-top: 1px solid #ddd;">Account</a>
+                            
+                            <a href="#">Help</a>
+                            <a href="#" id="logout_link">Log out</a>
+                          </div>
+                    </div>
+                </a>
+            </div>
+             <!-- end of when user is logged in  -->
+
+            </div>
+            <div class="h-full flex items-center sm:hidden"><span role="img" aria-label="menu" tabindex="-1" class="anticon anticon-menu"><svg viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg></span></div>
+        </div>
+    </header>
+    <div class="onzoom-homepage-total" style="padding-left: 0rem;padding-right: 0rem;">
+        <main id="site-content" style="padding-top: 1.5vh;" tabindex="-1">
+            <div class="_1mb2uol" data-veloute="user_profile_frame" id="FMP-target">
+                <div class="_dj903s">
+                    <div class="_1h9muyam">
+                        <div class="_fjxhrpz">
+                            <div class="_1qpzr2d">
+                                <div class="_fvp3r0u">
+                                    <div class="_1sn7185i">
+                                        <div class="_1h6n1zu" style="display: inline-block; vertical-align: bottom; height: 100%; width: 100%; min-height: 1px;" role="img" aria-busy="false" aria-label="David User Profile">
+                                            <img
+                                                class="_9ofhsl"
+                                                style="object-fit: cover; vertical-align: bottom;"
+                                                aria-hidden="true"
+                                                alt="Fidelity Bank Organization Profile"
+                                                src="https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Forganizations%20App%2Ffidelity-logo.png?alt=media&token=d9c51329-bd48-44b0-9b24-23d8e08c8456"
+                                                data-original-uri="https://a0.muscache.com/im/pictures/user/235ebc5c-fabd-4f8e-83e9-128e07240459.jpg?aki_policy=profile_large"
+                                            />
+                                            <div class="_15p4g025" style="background-image: url('https://a0.muscache.com/im/pictures/user/235ebc5c-fabd-4f8e-83e9-128e07240459.jpg?aki_policy=profile_large'); background-size: cover;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="_pdgm0p"><a href="/users/edit-photo" class="_gzog035">Update photo</a></div>
+                            </div>
+                            <div class="_p03egf">
+                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; height: 24px; width: 24px; fill: currentcolor;" aria-hidden="true" role="presentation" focusable="false">
+                                    <path
+                                        d="M16 .798l.555.37C20.398 3.73 24.208 5 28 5h1v12.5C29 25.574 23.21 31 16 31S3 25.574 3 17.5V5h1c3.792 0 7.602-1.27 11.445-3.832L16 .798zm0 2.394l-.337.213C12.245 5.52 8.805 6.706 5.352 6.952L5 6.972V17.5c0 6.831 4.716 11.357 10.713 11.497L16 29c6.133 0 11-4.56 11-11.5V6.972l-.352-.02c-3.453-.246-6.893-1.432-10.311-3.547L16 3.192zm7 7.394L24.414 12 13.5 22.914 7.586 17 9 15.586l4.5 4.499 9.5-9.5z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <div class="_1ob9ag1">Identity verification</div>
+                            <div class="_1v8nkzp">Show others you’re really you with the identity verification badge.</div>
+                            <a href="/account-fov?user_context=USER_PROFILE" class="_13e0raay">Get the badge</a>
+                            <div class="_16f6zsb"><div class="_1k2miji"></div></div>
+                            <div class="_149ig5a">
+                                <section>
+                                    <div class="_1i6o9hv">Fidelity Bank East Legon confirmed</div>
+                                    <div class="_p03egf">
+                                        <div class="_dj903s">
+                                            <div class="_l0bkzy6">
+                                                <div class="_1ahen39n">
+                                                    <span class="_1lz166q">
+                                                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="display: block; height: 16px; width: 16px; fill: currentcolor;" aria-hidden="true" role="presentation" focusable="false">
+                                                            <path d="M13.102 2.537L15.365 4.8l-9.443 9.443L.057 8.378 2.32 6.115l3.602 3.602z"></path>
+                                                        </svg>
+                                                    </span>
+                                                    <span class="_1ax9t0a">Email address</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="_17ctt5">
+                                        <div class="_16f6zsb"><div class="_1k2miji"></div></div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="_rdxv8tm">
+                        <div class="_o7dyhr">
+                            <section>
+                                <div class="_1v3a3q7">
+                                    <div class="_15vo2nls">
+                                        <div class="_fvp3r0u">
+                                            <div class="_1sn7185i">
+                                                <div class="_1h6n1zu" style="display: inline-block; vertical-align: bottom; height: 100%; width: 100%; min-height: 1px;" role="img" aria-busy="false" aria-label="David User Profile">
+                                                    <img
+                                                        class="_9ofhsl"
+                                                        style="object-fit: cover; vertical-align: bottom;"
+                                                        aria-hidden="true"
+                                                        alt="David User Profile"
+                                                        src="https://a0.muscache.com/im/pictures/user/235ebc5c-fabd-4f8e-83e9-128e07240459.jpg?aki_policy=profile_large"
+                                                        data-original-uri="https://a0.muscache.com/im/pictures/user/235ebc5c-fabd-4f8e-83e9-128e07240459.jpg?aki_policy=profile_large"
+                                                    />
+                                                    <div class="_15p4g025" style="background-image: url('https://a0.muscache.com/im/pictures/user/235ebc5c-fabd-4f8e-83e9-128e07240459.jpg?aki_policy=profile_large'); background-size: cover;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="_1fopc40">
+                                        <div class="_a0kct9"><h1 tabindex="-1" class="_14i3z6h">Welcome, this is Fidelity Bank East Legon</h1></div>
+                                        <div class="_u5okn1">Joined March 2021</div>
+                                    </div>
+                                    <div class="_14h4uoc">
+                                        <button type="button" class="_ejra3kg" data-veloute="user_profile_edit_button">Edit profile</button><span class="_nx67f0"><a href="/users/edit-photo" class="_gzog035">Update photo</a></span>
+                                    </div>
+                                </div>
+                                <div class="_nx67f0">
+                                    <div class="_p03egf">
+                                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; height: 24px; width: 24px; fill: currentcolor;" aria-hidden="true" role="presentation" focusable="false">
+                                            <path
+                                                d="M16 .798l.555.37C20.398 3.73 24.208 5 28 5h1v12.5C29 25.574 23.21 31 16 31S3 25.574 3 17.5V5h1c3.792 0 7.602-1.27 11.445-3.832L16 .798zm0 2.394l-.337.213C12.245 5.52 8.805 6.706 5.352 6.952L5 6.972V17.5c0 6.831 4.716 11.357 10.713 11.497L16 29c6.133 0 11-4.56 11-11.5V6.972l-.352-.02c-3.453-.246-6.893-1.432-10.311-3.547L16 3.192zm7 7.394L24.414 12 13.5 22.914 7.586 17 9 15.586l4.5 4.499 9.5-9.5z"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <div class="_1ob9ag1">Identity verification</div>
+                                    <div class="_1v8nkzp">Show others you’re really you with the identity verification badge.</div>
+                                    <a href="/account-fov?user_context=USER_PROFILE" class="_13e0raay">Get the badge</a>
+                                    <div class="_16f6zsb"><div class="_1k2miji"></div></div>
+                                </div>
+                                <div>
+                                    <section>
+                                        <div class="_152qbzi">
+                                            <h2 tabindex="-1" class="_14i3z6h"><span class="_1gvh1f5">About</span></h2>
+                                        </div>
+                                        <div>
+                                            <div class="_1ahen39n">
+                                                <span class="_1lz166q">
+                                                  <ion-icon style="font-size: x-large;" name="locate-sharp"></ion-icon>
+                                                    <!-- <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="display: block; height: 16px; width: 16px; fill: currentcolor;" aria-hidden="true" role="presentation" focusable="false">
+                                                        <path
+                                                            d="M8.602 1.147l.093.08 7.153 6.914-.696.718L14 7.745V14.5a.5.5 0 0 1-.41.492L13.5 15H10V9.5a.5.5 0 0 0-.41-.492L9.5 9h-3a.5.5 0 0 0-.492.41L6 9.5V15H2.5a.5.5 0 0 1-.492-.41L2 14.5V7.745L.847 8.86l-.696-.718 7.153-6.915a1 1 0 0 1 1.297-.08z"
+                                                        ></path>
+                                                    </svg> -->
+                                                </span>
+                                                <span class="_1ax9t0a">Located at East Legon, Accra, Ghana</span>
+                                            </div>
+                                        </div>
+                                       
+                                    </section>
+                                    <div class="_16f6zsb"><div class="_1k2miji"></div></div>
+                                </div>
+                                <div>
+                                  <section>
+                                      <!-- <div class="_152qbzi">
+                                          <h2 tabindex="-1" class="_14i3z6h"><span class="_1gvh1f5">About</span></h2>
+                                      </div> -->
+                                      <div>
+                                          <div class="_1ahen39n">
+                                              <span class="_1lz166q">
+                                                <ion-icon style="font-size: x-large;" name="business-sharp"></ion-icon>
+                                                  <!-- <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="display: block; height: 16px; width: 16px; fill: currentcolor;" aria-hidden="true" role="presentation" focusable="false">
+                                                      <path
+                                                          d="M8.602 1.147l.093.08 7.153 6.914-.696.718L14 7.745V14.5a.5.5 0 0 1-.41.492L13.5 15H10V9.5a.5.5 0 0 0-.41-.492L9.5 9h-3a.5.5 0 0 0-.492.41L6 9.5V15H2.5a.5.5 0 0 1-.492-.41L2 14.5V7.745L.847 8.86l-.696-.718 7.153-6.915a1 1 0 0 1 1.297-.08z"
+                                                      ></path>
+                                                  </svg> -->
+                                              </span>
+                                              <span class="_1ax9t0a">Financial Institution</span>
+                                          </div>
+                                      </div>
+                                      
+                                  </section>
+                                  <div class="_16f6zsb"><div class="_1k2miji"></div></div>
+                              </div>
+                                <div class="_nx67f0">
+                                    <div class="_149ig5a">
+                                        <section>
+                                            <div class="_1i6o9hv">Fidelity Bank East Legon confirmed</div>
+                                            <div class="_p03egf">
+                                                <div class="_dj903s">
+                                                    <div class="_l0bkzy6">
+                                                        <div class="_1ahen39n">
+                                                            <span class="_1lz166q">
+                                                                <svg
+                                                                    viewBox="0 0 16 16"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    style="display: block; height: 16px; width: 16px; fill: currentcolor;"
+                                                                    aria-hidden="true"
+                                                                    role="presentation"
+                                                                    focusable="false"
+                                                                >
+                                                                    <path d="M13.102 2.537L15.365 4.8l-9.443 9.443L.057 8.378 2.32 6.115l3.602 3.602z"></path>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="_1ax9t0a">Email address</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="_17ctt5">
+                                                <div class="_16f6zsb"><div class="_1k2miji"></div></div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                                <section>
+                                    <h2 tabindex="-1" class="_14i3z6h">
+                                        <span class="_1gvh1f5">
+                                            <div class="_5kaapu" id="review-section-title">
+                                                <div class="_14tkmhr">
+                                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" style="display: block; height: 16px; width: 16px; fill: currentcolor;" aria-hidden="true" role="presentation" focusable="false">
+                                                        <path
+                                                            d="M15.094 1.579l-4.124 8.885-9.86 1.27a1 1 0 0 0-.542 1.736l7.293 6.565-1.965 9.852a1 1 0 0 0 1.483 1.061L16 25.951l8.625 4.997a1 1 0 0 0 1.482-1.06l-1.965-9.853 7.293-6.565a1 1 0 0 0-.541-1.735l-9.86-1.271-4.127-8.885a1 1 0 0 0-1.814 0z"
+                                                            fill-rule="evenodd"
+                                                        ></path>
+                                                    </svg>
+                                                </div>
+                                                0 reviews
+                                            </div>
+                                        </span>
+                                    </h2>
+                                    <div class="_klarpw"></div>
+                                </section>
+                                <div class="_16f6zsb"><div class="_1k2miji"></div></div>
+                                <a href="/users/reviews" class="_gzog035">Reviews by you</a>
+                                <div class="_16f6zsb"><div class="_1k2miji"></div></div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+    
+    </div>
+            <div class="onzoom-homepage-total-footer-wrap">
+                <footer class="border-t border-solid border-line">
+                    <div class="pt-8 w-full flex flex-wrap px-4-5 md:px-24-5 md:flex-no-wrap">
+                        <div class="w-full md:w-1/4">
+                            <div class="mb-10"><a href="https://zoom.us" class="inline-block relative hover:no-underline">
+                              <!-- <svg width="91" height="20" fill="none" class="h-5"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 20l-1-.05c-1.66-.11-2.851-1.302-2.95-2.951L1 16 13 4H4l-1.001-.05C1.363 3.855.179 2.626.05.999L0 0l15 .001 1 .049c1.657.087 2.87 1.292 2.95 2.951L19 4 7 16h9l1 .05c1.65.103 2.816 1.305 2.95 2.951L20 20H5zm31.071-2.929c3.905-3.905 3.905-10.237 0-14.142A9.976 9.976 0 0028.994 0a9.97 9.97 0 00-7.065 2.929c-3.905 3.905-3.905 10.237 0 14.142 3.905 3.905 10.237 3.905 14.142 0zm-2.828-2.828a6 6 0 10-8.486-8.486 6 6 0 008.486 8.486zM58.07 2.929c3.905 3.905 3.905 10.237 0 14.142-3.905 3.905-10.237 3.905-14.142 0-3.905-3.905-3.905-10.237 0-14.142A9.97 9.97 0 0150.994 0a9.976 9.976 0 017.077 2.929zm-2.828 2.828a6 6 0 11-8.486 8.486 6 6 0 018.486-8.486zM74.95 8c-.039-.751-.146-1.417-.489-2.006A3.998 3.998 0 0071 4c-1.477 0-2.766.8-3.46 1.99-.343.59-.448 1.258-.49 2.01L67 9v7l-.05 1c-.065 1.66-1.28 2.84-2.95 2.95L63 20V0c1 0 2.742.506 3.52 1.371A7.963 7.963 0 0171 0a7.981 7.981 0 016 2.708A8 8 0 0191 8v12l-.999-.05c-1.652-.096-2.847-1.306-2.951-2.951L87 16V8.999L86.95 8c-.04-.733-.145-1.412-.486-2.001A3.999 3.999 0 0083 4a3.998 3.998 0 00-3.457 1.986c-.345.592-.454 1.272-.493 2.014L79 9v11l-.999-.05c-1.65-.104-2.852-1.316-2.951-2.951L75 16V9l-.05-1z" fill="#2D8CFF"></path></svg> -->
+                              <b style="color: #f05537;font-size: 18px;"> events</b> <b style="color: #1e0a3c;font-size: 18px;">369</b>
+                            </a></div>
+                        </div>
+                        <div class="w-full md:w-3/4">
+                            <div class="pb-4 flex flex-wrap md:flex-no-wrap">
+                                <div class="w-full sm:w-1/2 md:w-1/3 footer-item">
+                                    <dl style="min-height: 160px;"><dt class="pb-8 -mb-5"><a class="text-main text-sm hover:text-primary hover:underline" href="/e/view" target="_blank" rel="noopener noreferrer">Events369</a></dt>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="https://support.zoom.us/hc/en-us/sections/360010498811-OnZoom" target="_blank" rel="noopener noreferrer">All Events369 FAQ</a></dd>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="https://support.zoom.us/hc/en-us/articles/360050178332" target="_blank" rel="noopener noreferrer">Event Host FAQ</a></dd>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="https://support.zoom.us/hc/en-us/articles/360049497492" target="_blank" rel="noopener noreferrer">Events369 Host getting started</a></dd>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="https://support.zoom.us/hc/en-us/articles/360049753551" target="_blank" rel="noopener noreferrer">Events369 Attendee getting started</a></dd>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="https://zoom.us/download#client_4meeting" target="_blank" rel="noopener noreferrer">Download Events Client</a></dd>
+                                    </dl>
+                                </div>
+                                <div class="w-full sm:w-1/2 md:w-1/3 footer-item">
+                                    <dl style="min-height: 160px;"><dt class="pb-8 -mb-5"><a class="text-main text-sm hover:text-primary hover:underline" href="https://zoom.us/about" target="_blank" rel="noopener noreferrer">About</a></dt>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="http://blog.zoom.us/" target="_blank" rel="noopener noreferrer">Events369 Blog</a></dd>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="https://zoom.us/team" target="_blank" rel="noopener noreferrer">Our Team</a></dd>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="https://zoom.us/zoomisbetter" target="_blank" rel="noopener noreferrer">Why Events369</a></dd>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="https://zoom.us/resources" target="_blank" rel="noopener noreferrer">Resources</a></dd>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="https://zoom.us/press" target="_blank" rel="noopener noreferrer">Press</a></dd>
+                                    </dl>
+                                </div>
+                                <div class="w-full sm:w-1/2 md:w-1/3 footer-item">
+                                    <dl style="min-height: 160px;"><dt class="pb-8 -mb-5"><a class="text-main text-sm hover:text-primary hover:underline" href="http://support.zoom.us/" target="_blank" rel="noopener noreferrer">Support</a></dt>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="http://support.zoom.us/" target="_blank" rel="noopener noreferrer">Support Center</a></dd>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="https://zoom.us/feed" target="_blank" rel="noopener noreferrer">Feedback</a></dd>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="https://zoom.us/contact" target="_blank" rel="noopener noreferrer">Contact Us</a></dd>
+                                        <dd><a class="text-minor text-xs hover:text-primary hover:underline" href="https://zoom.us/accessibility" target="_blank" rel="noopener noreferrer">Accessibility</a></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="mb-5 text-xs"><span class="pr-4 -mr-2 text-minor">Language: </span><span class="ant-dropdown-trigger text-sm"><span>English</span><span role="img" aria-label="down" class="anticon anticon-down"><svg viewBox="64 64 896 896" focusable="false" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path></svg></span></span>
+                            </div>
+                            <div class="mb-8 flex flex-wrap md:flex-no-wrap"><a class="mr-6" href="http://www.linkedin.com/company/2532259" target="_blank" rel="noopener noreferrer"><svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.6" d="M6.07368 18.2121V10.4665H8.6518V18.2121H6.07368ZM8.81921 8.07812C8.81921 8.81473 8.26118 9.41741 7.35716 9.41741H7.346C6.47546 9.41741 5.91743 8.81473 5.91743 8.07812C5.91743 7.3192 6.49779 6.73884 7.37948 6.73884C8.26118 6.73884 8.80805 7.3192 8.81921 8.07812ZM15.3482 18.2121V14.0714C15.3482 13.0223 14.9799 12.3192 14.0536 12.3192C13.3393 12.3192 12.9152 12.7991 12.7255 13.2567C12.6585 13.4241 12.6473 13.6585 12.6473 13.8817V18.2121H10.0692C10.1027 11.192 10.0692 10.4665 10.0692 10.4665H12.6473V11.5938H12.625C12.9598 11.058 13.5737 10.2879 14.9576 10.2879C16.654 10.2879 17.9264 11.3929 17.9264 13.7701V18.2121H15.3482ZM20.5714 7.07366C20.5714 5.29911 19.1317 3.85938 17.3572 3.85938H6.64287C4.86832 3.85938 3.42859 5.29911 3.42859 7.07366V17.7879C3.42859 19.5625 4.86832 21.0022 6.64287 21.0022H17.3572C19.1317 21.0022 20.5714 19.5625 20.5714 17.7879V7.07366Z" fill="#747487"></path></svg></a>
+                                <a
+                                    class="mr-6" href="http://www.twitter.com/zoom_us" target="_blank" rel="noopener noreferrer"><svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.6" d="M20.7946 6.98354C20.1473 7.26255 19.4442 7.46345 18.7187 7.54157C19.4665 7.09514 20.0357 6.39202 20.3035 5.55497C19.6116 5.96791 18.8303 6.26925 18.0156 6.4255C17.3571 5.72238 16.4196 5.28711 15.3817 5.28711C13.3839 5.28711 11.7768 6.90541 11.7768 8.89202C11.7768 9.17104 11.8102 9.45006 11.866 9.71791C8.87497 9.56166 6.20755 8.13309 4.433 5.94559C4.1205 6.48131 3.94193 7.09514 3.94193 7.76479C3.94193 9.01479 4.57809 10.1197 5.54907 10.767C4.95755 10.7447 4.39952 10.5773 3.91961 10.3094C3.91961 10.3206 3.91961 10.3429 3.91961 10.3541C3.91961 12.1063 5.15845 13.5572 6.81023 13.892C6.50889 13.9701 6.18523 14.0148 5.86157 14.0148C5.6272 14.0148 5.40398 13.9925 5.18077 13.959C5.63836 15.3876 6.96648 16.4255 8.5513 16.459C7.31247 17.43 5.76113 17.9992 4.07586 17.9992C3.77452 17.9992 3.4955 17.988 3.20532 17.9545C4.8013 18.9813 6.69863 19.5728 8.74104 19.5728C15.3705 19.5728 18.9977 14.0818 18.9977 9.31613C18.9977 9.15988 18.9977 9.00363 18.9866 8.84738C19.6897 8.33398 20.3035 7.69782 20.7946 6.98354Z" fill="#747487"></path></svg></a>
+                                    <a
+                                        class="mr-6" href="http://www.youtube.com/zoommeetings" target="_blank" rel="noopener noreferrer"><svg class="" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path opacity="0.6" d="M9.93525 15.019V9.40513L15.337 12.2288L9.93525 15.019ZM12 5.39844C7.79239 5.39844 5.00221 5.59933 5.00221 5.59933C4.61159 5.64397 3.75221 5.64397 2.99328 6.44754C2.99328 6.44754 2.37944 7.05022 2.20087 8.43415C1.98882 10.0525 1.99998 11.6708 1.99998 11.6708V13.1886C1.99998 13.1886 1.98882 14.8069 2.20087 16.4252C2.37944 17.798 2.99328 18.4118 2.99328 18.4118C3.75221 19.2042 4.75668 19.1819 5.2031 19.26C5.2031 19.26 6.79909 19.4163 12 19.4609C16.2076 19.4609 18.9977 19.2489 18.9977 19.2489C19.3884 19.2042 20.2477 19.2042 21.0067 18.4118C21.0067 18.4118 21.6205 17.798 21.7991 16.4252C22.0111 14.8069 22 13.1886 22 13.1886V11.6708C22 11.6708 22.0111 10.0525 21.7991 8.43415C21.6205 7.05022 21.0067 6.44754 21.0067 6.44754C20.2477 5.64397 19.3884 5.64397 18.9977 5.59933C18.9977 5.59933 16.2076 5.39844 12 5.39844Z" fill="#747487"></path></svg></a>
+                                        <a
+                                            class="mr-6" href="http://www.facebook.com/zoomvideocommunications" target="_blank" rel="noopener noreferrer"><svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.6" d="M16.9286 3.42969H6.21429C4.43973 3.42969 3 4.86942 3 6.64397V17.3583C3 19.1328 4.43973 20.5725 6.21429 20.5725H12.1518V13.9319H9.91964V11.3426H12.1518V9.43415C12.1518 7.22433 13.5134 6.01897 15.4888 6.01897C16.4263 6.01897 17.2411 6.08594 17.4754 6.11942V8.42969L16.1138 8.44085C15.0312 8.44085 14.8304 8.94308 14.8304 9.69085V11.3426H17.3862L17.0513 13.9319H14.8304V20.5725H16.9286C18.7031 20.5725 20.1429 19.1328 20.1429 17.3583V6.64397C20.1429 4.86942 18.7031 3.42969 16.9286 3.42969Z" fill="#747487"></path></svg></a>
+                                            <a
+                                                class="mr-6" href="http://blog.zoom.us/" target="_blank" rel="noopener noreferrer"><svg class="" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.6" d="M3.41741 12.4297C3.41741 15.8225 5.39286 18.7578 8.26116 20.1529L4.16518 8.93638C3.68527 10.0078 3.41741 11.1908 3.41741 12.4297ZM17.7924 11.9944C17.7924 10.9342 17.4241 10.1975 17.0893 9.62835C16.654 8.91406 16.2411 8.32255 16.2411 7.61942C16.2411 6.82701 16.8438 6.10156 17.6808 6.10156C17.7143 6.10156 17.7589 6.10156 17.7924 6.10156C16.2634 4.70647 14.2321 3.8471 12 3.8471C8.99777 3.8471 6.36384 5.38728 4.83482 7.71987C5.03571 7.71987 5.22545 7.73103 5.3817 7.73103C5.3817 7.73103 6.28571 7.71987 7.66964 7.61942C8.12723 7.58594 8.18304 8.26674 7.72545 8.32255C7.2567 8.37835 6.7433 8.41183 6.7433 8.41183L9.8683 17.6975L11.7433 12.0725L10.404 8.41183C10.404 8.41183 9.94643 8.36719 9.51116 8.32255C9.04241 8.28906 9.09821 7.58594 9.56696 7.61942C10.9844 7.71987 11.8214 7.73103 11.8214 7.73103C11.8214 7.73103 12.7143 7.71987 14.1094 7.61942C14.567 7.58594 14.6228 8.26674 14.1652 8.32255C13.6964 8.37835 13.183 8.41183 13.183 8.41183L16.2857 17.6306L17.1339 14.7734C17.4911 13.5792 17.7924 12.731 17.7924 11.9944ZM12.1451 13.1775L9.57813 20.6551C10.3482 20.8895 11.1629 21.0123 12 21.0123C13.0045 21.0123 13.9531 20.8337 14.846 20.5212C14.8237 20.4877 14.8013 20.4431 14.7902 20.3984L12.1451 13.1775ZM19.5223 8.31138C19.567 8.5904 19.5893 8.88058 19.5893 9.19308C19.5893 10.0636 19.3661 11.0234 18.9308 12.2734L16.308 19.8404C18.8638 18.356 20.5826 15.5993 20.5826 12.4297C20.5826 10.9342 20.192 9.53906 19.5223 8.31138ZM12 2.42969C6.48661 2.42969 2 6.9163 2 12.4297C2 17.9431 6.48661 22.4297 12 22.4297C17.5134 22.4297 22 17.9431 22 12.4297C22 6.9163 17.5134 2.42969 12 2.42969ZM12 21.9721C6.7433 21.9721 2.45759 17.6864 2.45759 12.4297C2.45759 7.17299 6.7433 2.88728 12 2.88728C17.2567 2.88728 21.5424 7.17299 21.5424 12.4297C21.5424 17.6864 17.2567 21.9721 12 21.9721Z" fill="#747487"></path></svg></a>
+                            </div>
+                            <div class="text-xs"><span class="text-minor mr-2 pr-2">Copyright ©2021 Events369, Inc. All rights reserved.</span><span><span><a class="text-main hover:text-primary hover:underline" href="/e/privacy" target="_blank" rel="noopener noreferrer">Events369 Privacy Statement</a><span> · </span></span><span><a class="text-main hover:text-primary hover:underline" href="/e/tou" target="_blank" rel="noopener noreferrer">Events369 Terms of Use</a><span> · </span></span><span><a class="text-main hover:text-primary hover:underline" href="https://zoom.us/docs/en-us/community-standards.html" target="_blank" rel="noopener noreferrer">Events369 Community Standards</a><span> · </span></span><span><a class="text-main hover:text-primary hover:underline" href="#">Do Not Sell My Personal Information</a></span><span><a class="text-main hover:text-primary hover:underline ft-text-black" id="teconsent" style="" consent="0,1,2" aria-label="Open Cookie Preferences Modal" role="complementary"><span> · </span>
+                                <script
+                                    src="https://consent.trustarc.com/asset/notice.js/v/v1.7-226" async="async" crossorigin=""></script><a role="link" id="icon-id05296389928473747" tabindex="0" aria-label="Cookie Preferences" style="cursor: pointer;" lang="en">Cookie Preferences</a></a>
+                                    </span>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            </div>
+</ion-content>

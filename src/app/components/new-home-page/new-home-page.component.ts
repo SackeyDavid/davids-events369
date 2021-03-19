@@ -70,7 +70,7 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
 
   public discover: string
 
-  
+  show_logged_in: boolean = false
 
   banners = [
     { id: this.getRandomInt(0, 9999999999), location: 'Accra', description: 'Thur, Feb 18, 2021 7:00 PM GMT', title: 'Human Connections.', header: 'Online events.', subtitle: 'Made for You', paid: false, photo: 'https://firebasestorage.googleapis.com/v0/b/semagh-987db.appspot.com/o/Work%2FEvents369%2Fcustomer%20App%2Fmarketing%20space%2Fbanner--202102-birthday.webp?alt=media&token=3c1bc412-f6e5-45fa-8aeb-216c7c480365'},
@@ -400,6 +400,13 @@ export class NewHomePageComponent implements OnInit, AfterViewInit, AfterContent
 
   openAccountsPage() {
     this.router.navigate(['account-settings'])
+    // this.router.navigate(['account/profile'])
+  }
+
+  logIn() {
+    this.show_logged_in =  ((this.show_logged_in === false) ? true: false)
+    console.log(this.show_logged_in)
+
   }
 
 

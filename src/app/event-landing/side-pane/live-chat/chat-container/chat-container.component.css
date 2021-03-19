@@ -7,12 +7,14 @@
     margin: 10px 0;
   }
   
-  /* Darker chat container */
   .sender {
-    border-color: dedede;
     background-color: rgba(189, 231, 161, 0.404);
   }
   
+  .recipient {
+    background-color: rgba(226, 226, 226, 0.568);
+  }
+
   /* Clear floats */
   .container::after {
     content: "";

@@ -9,10 +9,14 @@ import { MenuPage } from './menu.page';
 
 const routes: Routes = [
   {
-    path: 'menu',
+    path: '',
     component: MenuPage,
     children: [
       { path: 'home', loadChildren: () => import('../home/home.module').then( m => m.HomePageModule) },
+      {
+        path: 'profile',
+        loadChildren: () => import('../profile/profile.module').then( m => m.ProfilePageModule)
+      },
       { 
         path: "user-page", 
         loadChildren: () => import('../user-page/user-page.module').then(m => m.UserPageModule) 
@@ -29,13 +33,45 @@ const routes: Routes = [
         path: 'settings',
         loadChildren: () => import('../settings/settings.module').then( m => m.SettingsPageModule)
       },
+      // {
+      //   path: 'organization',
+      //   loadChildren: () => import('../organization/organization.module').then( m => m.OrganizationPageModule)
+      // },
+      {
+        path: 'calendar',
+        loadChildren: () => import('../calendar/calendar.module').then( m => m.CalendarPageModule)
+      },
+      {
+        path: 'favorites',
+        loadChildren: () => import('../favorites/favorites.module').then( m => m.FavoritesPageModule)
+      },
+      {
+        path: 'security',
+        loadChildren: () => import('../security/security.module').then( m => m.SecurityPageModule)
+      },
+      {
+        path: 'personal-info',
+        loadChildren: () => import('../personal-info/personal-info.module').then( m => m.PersonalInfoPageModule)
+      },
+      {
+        path: 'payments',
+        loadChildren: () => import('../payments/payments.module').then( m => m.PaymentsPageModule)
+      },
+      {
+        path: 'notifications',
+        loadChildren: () => import('../notifications/notifications.module').then( m => m.NotificationsPageModule)
+      },
+      {
+        path: 'privacy',
+        loadChildren: () => import('../privacy/privacy.module').then( m => m.PrivacyPageModule)
+      },
       
     ]
   }
   ,
   {
     path: '',
-    redirectTo: '/menu/home'
+    redirectTo: '/account/profile'
   }
 
 ];

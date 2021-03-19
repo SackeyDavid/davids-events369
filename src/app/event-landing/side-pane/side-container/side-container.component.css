@@ -1,8 +1,15 @@
 .border-div{
+    height: 450px;
     margin-top: 30px;
     border-left: 1px solid rgb(209, 209, 209);
+    border-bottom: 1px solid rgb(209, 209, 209);
 }
 
 .tabs-div{
     margin-left: 30px;
+}
+
+.tab-wrapper{
+    height: inherit;
+    overflow: auto;
 }

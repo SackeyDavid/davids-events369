@@ -16,21 +16,22 @@
 <ion-content [fullscreen]="true">
     <div id="root">
       <header role="navigation" class="fixed z-30 left-0 top-0 w-full h-18 px-6 bg-white shadow-header flex items-center justify-between">
-          <div>
-              <div class="flex items-center justify-start"><a href="/e/view" class="block relative" rel="noopener noreferrer" style="width: 133.6px;" aria-label="Zoom logo">
+          <div (click)="logIn()">
+              <div class="flex items-center justify-start"><a routerLink="/home" class="block relative" rel="noopener noreferrer" style="width: 133.6px;" aria-label="Zoom logo">
                 <!-- <svg id="logo_svg__Layer_1" x="0" y="0" viewBox="0 0 483 72.3" xml:space="preserve" class="block h-5"><style>.logo_svg__st0,.logo_svg__st1{fill-rule:evenodd;clip-rule:evenodd;fill:#2d8cff}.logo_svg__st1{fill:#414155}</style><path class="logo_svg__st0" d="M61.4 10.6C54.4 3.6 45.2 0 36 0h-.1c-9.2 0-18.4 3.5-25.4 10.6-14 14.1-14 36.8 0 50.9 14 14 36.8 14 50.8 0 14.1-14 14.1-36.8.1-50.9zM51.2 51.3c-8.4 8.4-22.1 8.4-30.5 0s-8.4-22.1 0-30.5 22.1-8.4 30.5 0 8.4 22.1 0 30.5z"></path><path class="logo_svg__st1" d="M292.7 10.6c-7-7-16.2-10.6-25.4-10.6h-.1c-9.2 0-18.4 3.5-25.4 10.6-14 14.1-14 36.8 0 50.9 14 14 36.8 14 50.8 0 14.1-14 14.1-36.8.1-50.9zm-10.2 40.7c-8.4 8.4-22.1 8.4-30.5 0s-8.4-22.1 0-30.5 22.1-8.4 30.5 0c8.5 8.4 8.5 22.1 0 30.5z"></path><path class="logo_svg__st1" d="M368.2 10.6c-7-7-16.2-10.5-25.4-10.6-9.2 0-18.4 3.5-25.4 10.6-14 14.1-14 36.8 0 50.9 14 14 36.8 14 50.8 0s14-36.8 0-50.9zM358 51.3c-8.4 8.4-22.1 8.4-30.5 0s-8.4-22.1 0-30.5 22.1-8.4 30.5 0c8.5 8.4 8.5 22.1 0 30.5zM177.4 71.9l3.6.2h53.9l-.2-3.6c-.5-5.9-4.7-10.2-10.6-10.6l-3.6-.2h-32.4l43.2-43.1-.2-3.6C230.8 5 226.4.7 220.5.4l-3.6-.2H163l.2 3.6c.5 5.9 4.7 10.3 10.6 10.6l3.6.2h32.4l-43.2 43.2.2 3.6c.3 5.8 4.6 10.1 10.6 10.5zM423.5 21.7c1.2 2.1 1.6 4.5 1.7 7.2l.2 3.6v25.2l.2 3.6c.4 5.9 4.7 10.2 10.6 10.6l3.6.2V32.5l.2-3.6c.1-2.7.5-5.1 1.8-7.2 2.5-4.3 7.1-7.1 12.4-7.1 5.3 0 10 2.9 12.5 7.2 1.2 2.1 1.6 4.6 1.7 7.2l.2 3.6v25.2l.2 3.6c.4 5.9 4.7 10.3 10.6 10.6l3.6.2V29.1C483 13.2 470.1.3 454.2.3c-8.6 0-16.3 3.8-21.6 9.7-5.2-6-13-9.7-21.6-9.7-6 0-11.5 1.8-16.1 4.9-2.8-3.1-9-4.9-12.6-4.9v72l3.6-.2c6-.4 10.4-4.6 10.6-10.6l.2-3.6V32.7l.2-3.6c.1-2.7.5-5.1 1.8-7.2 2.5-4.3 7.1-7.2 12.4-7.2 5.3-.2 9.9 2.7 12.4 7z"></path><path class="logo_svg__st0" d="M108.3.1c-7.1 0-13.7 2.3-19 6.1C86.2 2 79 .1 75.5.1v72l3.6-.2c6.1-.4 10.5-4.7 10.7-10.7l.2-3.6V33.1c0-10.1 8.2-18.3 18.3-18.3s18.3 8.2 18.3 18.3v24.8l.2 3.4c.2 6.1 4.7 10.3 10.7 10.7l3.6.2V33.1c.1-18.3-14.6-33-32.8-33z"></path></svg> -->
                 <b style="color: #f05537;font-size: 24px;"> events</b> <b style="color: #1e0a3c;font-size: 24px;">369</b>
                 <div class="w-10 h-5 text-center leading-5 text-white bg-primary absolute right-0 top-0 font-semibold" style="font-size: 11px; border-radius: 6px; margin-right: -48px; margin-top: -10px; box-shadow: rgba(0, 0, 0, 0.13) 0px 0px 8px;display: none;">BETA</div></a></div>
           </div>
           
-          <ion-searchbar style="width: 45%; margin-top: 0vh;padding-bottom: 0px; margin-left: -17vh;" id="first-tab" mode="md" class="store" placeholder="What do you want to attend?"></ion-searchbar>
+          <ion-searchbar style="width: 40%; margin-top: 0vh;padding-bottom: 0px; margin-left: -17vh;" id="first-tab" mode="md" class="store" placeholder="What do you want to attend?"></ion-searchbar>
           <div class="h-full">
             <!-- <div class="consumer-header__search" data-spec="consumer-header-search"><div class="consumer-header__search-autocomplete"><div class="search-input__query" data-spec="event-autocomplete"><div tabindex="-1"><div class="eds-autocomplete-field" data-spec="autocompletefield-field"><div class="eds-autocomplete-field__dropdown-holder"><div class="eds-field-styled eds-l-mar-bot-2 eds-field-styled--basic eds-field-styled--borderless" data-automation="input-field-wrapper" data-spec="input-field"><div class="eds-field-styled__border-simulation eds-field-styled__border-simulation--empty"><div class="eds-field-styled__internal"><span class="eds-field-styled__aside eds-field-styled__aside-prefix eds-field-styled__aside--icon"><i class="eds-vector-image eds-icon--small" data-spec="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 14c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm3.5.9c-1 .7-2.2 1.1-3.5 1.1-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6c0 1.3-.4 2.5-1.1 3.4l5.1 5.1-1.5 1.5-5-5.1z"></path></svg></i></span><div class="eds-field-styled__input-container"><div class="eds-field-styled__label-wrapper"><label class="eds-field-styled__label eds-is-hidden-accessible" id="eventPickerglobal-header-desktop-search-label" for="eventPickerglobal-header-desktop-search" data-spec="label-label"><span class="eds-label__content">autocomplete</span></label></div><input data-spec="input-field-input-element" class="eds-field-styled__input" id="eventPickerglobal-header-desktop-search" maxlength="1000" name="eventPickerglobal-header-desktop-search" placeholder="Search events" role="combobox" type="search" aria-expanded="false" aria-autocomplete="list" autocomplete="off" tabindex="0" value=""></div></div></div></div></div></div></div></div></div></div> -->
               <div class="weak-hidden sm:flex justify-between items-center text-sm font-semibold h-full">
                  
                   <!-- when user isn't logged in      -->
-                 
-                  <!-- <div class="dropdown" style="height: 100% !important;">
+                 <ng-container *ngIf="!show_logged_in">
+
+                  <div class="dropdown" style="height: 100% !important;">
                           <div class="dropbtn" style="display: grid;height: 100%;">
                               <a style="padding-right: 2.5rem !important; padding-left: 1.5rem !important;" class=" ml-3 sm:ml-5 md:ml-10 h-full text-minor flex items-center border-b-3 border-transparent" role="nav">
                                   <div class="font-semibold">About <ion-icon style="margin-bottom: -0.6vh;" name="chevron-down-outline"></ion-icon> </div>
@@ -70,19 +71,28 @@
                   </a>
                   <div class="pr-5 flex content-center items-center justify-start">
                       
-                      <a href="#" class="h-full border-b-3 border-transparent ml-3 sm:ml-5 md:ml-10 flex items-center text-minor hover:text-primary" role="nav">
+                      <a routerLink="/register" class="h-full border-b-3 border-transparent ml-3 sm:ml-5 md:ml-10 flex items-center text-minor hover:text-primary" role="nav">
                          
-                          <span>Sign In</span>
+                          <span>Sign Up</span>
                          
                       </a>
-                  </div> -->
-  
+                      <a routerLink="/login" class="h-full border-b-3 border-transparent ml-3 sm:ml-5 md:ml-10 flex items-center text-minor hover:text-primary" role="nav">
+                         
+                        <span>Log In</span>
+                       
+                    </a>
+                  </div>
+                  
+                 </ng-container>
                   
                   <!-- when user is logged in  -->
-                 
+                 <ng-container *ngIf="show_logged_in">
+
               <a  style="padding-right: 2.5rem !important;" class="ml-3 sm:ml-5 md:ml-10 text-primary h-full flex items-center border-b-3 border-transparent" role="nav" href="/e/becomeahost/intro" target="_blank" rel="noreferrer noopener">
                   <div class="font-semibold">Become a Host</div>
               </a>
+
+              <!-- not working  1 -->
                   <!-- <div style="height: 100% !important;">
                       <div class="dropbtn" style="display: grid;height: 100%;">
                           <a style="padding-right: 2.5rem !important;" class=" ml-3 sm:ml-5 md:ml-10 h-full text-minor flex items-center border-b-3 border-transparent" role="nav">
@@ -92,21 +102,22 @@
                       </div>
                       
                   </div> -->
-                  
+                
               
-                  <div style="height: 100% !important;">
+                  <!-- <div style="height: 100% !important;">
                       <div style="display: grid;height: 100%;">
                           <a style="padding-right: 2.5rem !important;" class=" ml-3 sm:ml-5 md:ml-10 h-full text-minor flex items-center border-b-3 border-transparent" role="nav">
                               <div class="font-semibold"> 
-                                  <!-- <ion-icon style="margin-bottom: -0.6vh;font-size: large;" name="ticket-outline"></ion-icon> -->
+                                  <ion-icon style="margin-bottom: -0.6vh;font-size: large;" name="ticket-outline"></ion-icon>
                                  <ion-icon style="margin-bottom: -0.6vh;font-size: large;" name="globe-outline"></ion-icon>
                                  </div>
                               
                           </a>
                       </div>
                       
-                  </div>
-                  
+                  </div> -->
+                <!-- end of not working 2   -->
+
               <div style="height: 100% !important; display: grid" class="dropdown_user pr-5 flex content-center items-center justify-start">
                  
                   <a href="#" class="h-full border-b-3 border-transparent ml-3 sm:ml-5 md:ml-10 flex items-center text-minor hover:text-primary" role="nav">
@@ -128,6 +139,8 @@
                               <a href="#"> <b> Following</b></a>
                               <a href="#" style="border-top: 1px solid #ddd;">Manage event</a>
                               <a href="#">Tickets (0)</a> 
+
+                              <!-- not working  -->
                               <!-- <a href="#">Credits</a> -->
                               <!-- <a href="#">Collections</a> -->
                               <!-- <a href="#">Interests</a> -->
@@ -136,6 +149,7 @@
                               <!-- <a href="#">Messages</a> -->
                               <!-- <a href="#">Events</a> -->
                               <!-- <a href="#">Saved</a> -->
+                              <!-- end of not working  -->
 
                                <a href="#">Host an event</a>
                               <a routerLink="/account-settings" (click)="openAccountsPage()" style="border-top: 1px solid #ddd;">Account</a>
@@ -146,6 +160,8 @@
                       </div>
                   </a>
               </div>
+              
+            </ng-container>
                <!-- end of when user is logged in  -->
   
               </div>
@@ -995,8 +1011,20 @@
                                             <!-- <div class="onzoom-homepage-event-item-time">Wed, Mar 3, 2021 3:30PM (GMT)</div> -->
                                             <div class="onzoom-homepage-event-item-time">{{getEventStartDateFormatted(event.start_date_time)}} (GMT)</div>
                                             <div class="onzoom-homepage-event-item-host">
-                                                <div class="onzoom-homepage-event-item-author"><span class="onzoom-homepage-event-item-by">By</span><a class="onzoom-homepage-event-item-author-link" href="" title="{{event.organizer}">{{event.organizer}}</a></div>
+                                                <div class="onzoom-homepage-event-item-author"><span class="onzoom-homepage-event-item-by">By</span><a class="onzoom-homepage-event-item-author-link" href="" title="{{event.created_by}">{{event.created_by}}</a></div>
+                                                <div class="onzoom-homepage-event-item-star-wrap"><a class="onzoom-homepage-event-item-star" href="https://on.zoom.us/ew/AFDke2TJ3yB6vdz1XFt8dX0SwroK1PCMIx4V0dmlQ8LgeeTLcEGHp9kEsdGsexAAGBD3dOM"><svg width="16" height="14" fill="none"><path d="M6.69 1.028c.536-1.084 2.083-1.084 2.618 0l1.367 2.77a.108.108 0 00.081.059l3.056.444c1.197.174 1.675 1.645.809 2.49L12.41 8.945a.108.108 0 00-.031.095l.521 3.044c.205 1.192-1.046 2.102-2.117 1.539l-2.734-1.437a.108.108 0 00-.1 0l-2.734 1.437c-1.07.563-2.322-.347-2.117-1.539l.522-3.044a.108.108 0 00-.031-.095L1.377 6.79c-.866-.844-.388-2.315.81-2.49l3.055-.443a.108.108 0 00.082-.06L6.69 1.029z" fill="#FAAC2A"></path></svg><span class="onzoom-homepage-event-item-star-number">{{event.rating}}</span><span class="onzoom-homepage-event-item-star-count">(3)</span></a>
+                                                </div>
+                                   
                                             </div>
+                                            
+                                            <!-- ...  -->
+                                            <!-- <div class="onzoom-homepage-event-item-author"><span class="onzoom-homepage-event-item-by">By</span><a class="onzoom-homepage-event-item-author-link" href="https://on.zoom.us/ew/AFDke2TJ3yB6vdz1XFt8dX0SwroK1PCMIx4V0dmlQ8LgeeTLcEGHp9kEsdGsexAAGBD3dOM" title="Leland Faulkner">Leland Faulkner</a></div>
+                                        <div
+                                            class="onzoom-homepage-event-item-star-wrap"><a class="onzoom-homepage-event-item-star" href="https://on.zoom.us/ew/AFDke2TJ3yB6vdz1XFt8dX0SwroK1PCMIx4V0dmlQ8LgeeTLcEGHp9kEsdGsexAAGBD3dOM"><svg width="16" height="14" fill="none"><path d="M6.69 1.028c.536-1.084 2.083-1.084 2.618 0l1.367 2.77a.108.108 0 00.081.059l3.056.444c1.197.174 1.675 1.645.809 2.49L12.41 8.945a.108.108 0 00-.031.095l.521 3.044c.205 1.192-1.046 2.102-2.117 1.539l-2.734-1.437a.108.108 0 00-.1 0l-2.734 1.437c-1.07.563-2.322-.347-2.117-1.539l.522-3.044a.108.108 0 00-.031-.095L1.377 6.79c-.866-.844-.388-2.315.81-2.49l3.055-.443a.108.108 0 00.082-.06L6.69 1.029z" fill="#FAAC2A"></path></svg><span class="onzoom-homepage-event-item-star-number">5.0</span><span class="onzoom-homepage-event-item-star-count">(3)</span></a></div>
+                                </div>
+                                <div class="onzoom-homepage-event-item-sold-status">Selling Out Soon</div>
+                            -->
+                                            <!-- ....  -->
                                             <div class="onzoom-homepage-event-item-sold-status">Selling Out Soon</div>
                                             <div class="onzoom-homepage-event-item-tags">
                                             <span *ngIf="event.recurring == 'Yes' " class="ant-tag ant-tag-has-color" style="background-color: #DFE6EB;">Event Series</span>

@@ -1,0 +1,58 @@
+<div class="body-inner">
+  <app-header
+    [intro]="(eventContent.length > 0) ? true:false"
+    [speakers]="(speakersContent.length > 0) ? true:false"
+    [schedule]="(scheduleContent.length > 0) ? true:false"
+    [pricing]="(pricingContent.length > 0) ? true:false"
+    [organisers]="(organisersContent.length > 0) ? true:false"
+    [sponsors]="(sponsorsContent.length > 0) ? true:false"
+    [direction]="dataContent?.hosting == 'Physical' ? true:false">
+  </app-header>
+
+  <app-banner
+    [bannerImg]="this.bannerImg"
+    [title]="this.eventTitle"
+    [startDate]="this.startDate"
+    [endDate]="this.endDate"
+    [venue]="this.venue">
+  </app-banner>
+
+  <app-basic-info
+    [description]="this.description">
+  </app-basic-info>
+
+  <app-speakers
+    *ngIf="speakersContent.length > 0"
+    [speakers]="speakersContent">
+  </app-speakers>
+
+  <!-- not available -->
+
+  <!-- <app-schedule
+    *ngIf="scheduleContent.length > 0"
+  </app-schedule> -->
+
+  <app-pricing
+    *ngIf="pricingContent.length > 0"
+    [pricing]="pricingContent">
+  </app-pricing>
+
+  <app-organizers
+    *ngIf="organisersContent.length > 0"
+    [organizers]="organisersContent">
+  </app-organizers>
+
+  <app-sponsors
+    *ngIf="sponsorsContent.length > 0"
+    [sponsors]="sponsorsContent">
+  </app-sponsors>
+
+  <app-location
+    *ngIf="dataContent?.hosting == 'Physical'"
+    [venue]="this.venue"
+    [contactPhone]="this.contactPhone"
+    [contactEmail]="this.contactEmail">
+  </app-location>
+
+  <app-event-footer></app-event-footer>
+</div>

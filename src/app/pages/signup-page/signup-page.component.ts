@@ -11,9 +11,9 @@ import { UserAuthService } from 'src/app/services/auth/user-auth.service';
 })
 export class SignupPageComponent implements OnInit {
 
-  public registerForm: FormGroup = new FormGroup({});
+  errorMsg: String = "";
 
-  errMsg: string = "";
+  public registerForm: FormGroup = new FormGroup({});
 
   constructor(private auth: UserAuthService) { }
 
@@ -21,9 +21,9 @@ export class SignupPageComponent implements OnInit {
     this.registerForm = new FormGroup({
       firstname: new FormControl('', Validators.required),
       lastname: new FormControl('', Validators.required),
-      country: new FormControl('', Validators.required),
+      country: new FormControl('GH', Validators.required),
       phone: new FormControl('', Validators.required),
-      usertype: new FormControl('', Validators.required),
+      usertype: new FormControl('admin', Validators.required),
       username: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
@@ -37,11 +37,13 @@ export class SignupPageComponent implements OnInit {
     this.auth.regsiterUser(this.registerForm.value)
       .subscribe(
         res => {
-          console.log(res);        
+          console.log(res); 
+          
+          if(res.message == 'Ok') this.errorMsg = 'Please confirm your email'
         },
         err => {
           console.log(err)
-          this.errMsg = err.error.message;
+          this.errorMsg = err.error.message;
         }
       );
   }

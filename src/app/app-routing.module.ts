@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { EventPageComponent } from './pages/event-page/event-page.component';
+import { PhoneConfirmationComponent } from './pages/phone-confirmation/phone-confirmation.component';
 
 const routes: Routes = [
   { 
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: SignupPageComponent
+  },
+  {
+    path: 'phone_confirmation',
+    component: PhoneConfirmationComponent
   },
   {
     path: 'event_details',

@@ -46,6 +46,7 @@ import { AdBannerComponent } from './components/ad-banner/ad-banner.component';
 import { LiveEventsComponent } from './components/live-events/live-events.component';
 import { EventCategoriesComponent } from './components/event-categories/event-categories.component';
 import { EventsListComponent } from './components/events-list/events-list.component';
+import { PhoneConfirmationComponent } from './pages/phone-confirmation/phone-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { EventsListComponent } from './components/events-list/events-list.compon
     LiveEventsComponent,
     EventCategoriesComponent,
     EventsListComponent,
+    PhoneConfirmationComponent,
   ],
   imports: [
     BrowserModule,

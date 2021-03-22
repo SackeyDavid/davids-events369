@@ -19,12 +19,12 @@ class UserAccount {
 })
 export class OrganizationMenuPage implements OnInit {
   pages = [
-    // {
-    //   title: 'Profile',
-    //   url: '/organization/profile',
-    //   icon: 'person-circle-outline',
-    //   beta: false
-    // },
+    {
+      title: 'Profile',
+      url: '/organization/profile',
+      // icon: 'person-circle-outline',
+      beta: false
+    },
     {
       title: 'Basic Info',
       url: '/organization/info',

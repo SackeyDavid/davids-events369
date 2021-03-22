@@ -20,4 +20,8 @@ export class AccountSettingsPage implements OnInit {
     this.router.navigate(['/home'])
   }
 
+  openOrganizationProfilePage() {
+    this.router.navigate(['/organization/profile'])
+  }
+
 }

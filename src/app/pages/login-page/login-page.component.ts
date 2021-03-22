@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { UserAuthService } from '../../services/auth/user-auth.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -10,11 +11,14 @@ import { UserAuthService } from '../../services/auth/user-auth.service'
 })
 export class LoginPageComponent implements OnInit {
 
+  errorMsg: String = "";
+
   loginForm: FormGroup = new FormGroup({});
 
-  errMsg: string = ""
-
-  constructor(private auth: UserAuthService) {
+  constructor(
+    private auth: UserAuthService,
+    private router: Router
+    ) {
   }
 
   ngOnInit(): void {
@@ -30,11 +34,12 @@ export class LoginPageComponent implements OnInit {
     this.auth.loginUser(this.loginForm.value)
       .subscribe(
         res => {
-          console.log(res);        
+          console.log(res);    
+          if(res.id) this.router.navigate(['/phone_confirm']);   
         },
         err => {
-          console.log(err)
-          this.errMsg = err.error.message
+          console.log(err);
+          this.errorMsg = err.error.message;
         }
       );
   }
